@@ -1,0 +1,127 @@
+\documentclass{report}
+
+\input{common.tex}
+
+\usepackage{fullpage}
+
+\newcommand{\playerequipment}[2]{
+    \myfilledtextfield{4.5cm}{#1} & \myfillednumberfield{1.2cm}{#2} & \mycheckbox & \\
+    \hline
+}
+
+\newcommand{\blankplayerequipment}{
+    \mytextfield{4.5cm} & \mynumberfield{1.2cm} & \mycheckbox & \mytextfield{6.5cm}\\
+    \hline
+}
+
+\newcommand{\blankplayerinfo}{
+    \mytextfield{4.5cm} & \mytextfield{6.5cm}\\
+    \hline
+}
+
+\newcommand{\quest}[5]{
+    \myfilledtextfield{5cm}{#1} & \myfilledtextfield{2cm}{#2} & \myfilledtextfield{1.75cm}{#3} & \myfillednumberfield{1.2cm}{#4} & {\centering #5} & \mycheckbox \\
+    \hline
+}
+
+\newcommand{\blankquest}{
+    \mytextfield{5cm} & \mytextfield{2cm} & \mytextfield{1.75cm} & \mynumberfield{1.2cm} & \mytextfield{1.2cm} & \mycheckbox \\
+    \hline
+}
+
+\begin{document}
+
+\tableofcontents
+
+\chapter{Quêtes}
+
+\begin{Form}
+\begin{tabular}{ | m{5cm} | m{2cm} | m{1.75cm} | m{1.2cm} | M{1.25cm} | m{2cm} |}
+    \hline
+    Nom & Type & Difficulté & Section & Spécial \footnote{Les symboles de la colonne « Spécial » ne sont utilisés que par certains héros spécifiques, ignorez-les pour les autres.} & Accomplie ?\\
+    \hline
+    \quest{Ceux qui vivent}{Diplomatie}{Facile}{108}{\cross}
+    \quest{L'ordre des tueurs de monstres}{Dipl./Roubl.}{Facile}{67}{\cross,\ankh}
+    \quest{Le château du comte}{Recherche}{Facile}{23}{\ankh}
+    \quest{Baba Yaga}{Diplomatie}{Moyenne}{103}{}
+    \quest{La traque}{Combat}{Moyenne}{3}{\caduceus}
+    \blankquest
+    \blankquest
+    \blankquest
+    \blankquest
+    \blankquest
+    \blankquest
+\end{tabular}
+\end{Form}
+
+\chapter{Protagoniste}
+
+\section{Équipement}
+
+\begin{Form}
+\begin{tabular}{ | m{4.5cm} | m{1.2cm} | m{1.2cm} | m{6.5cm} | }
+    \hline
+    Objet & Valeur & Utilisé ? & Notes\\
+    \hline
+    \playerequipment{Dague en argent}{5}
+    \playerequipment{Flûte traversière}{1}
+    \playerequipment{Pendentif sacré}{2}
+    \playerequipment{Anneau de Lumière}{10}
+    \playerequipment{Fétiche en os}{5}
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+    \blankplayerequipment
+\end{tabular}
+\end{Form}
+
+\section{Informations}
+
+\begin{Form}
+\begin{tabular}{ | m{4.5cm} | m{6.5cm} | }
+    \hline
+    Nom & Notes\\
+    \hline
+    \blankplayerinfo
+    \blankplayerinfo
+    \blankplayerinfo
+    \blankplayerinfo
+    \blankplayerinfo
+\end{tabular}
+\end{Form}
+
+\section{Codes}
+
+\begin{Form}
+\begin{tabular}{ | m{3cm} | m{3cm} | m{3cm} | m{3cm} | }
+    \hline
+    \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm}\\ 
+    \hline
+    \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm}\\ 
+    \hline
+    \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm}\\ 
+    \hline
+    \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm} & \mytextfield{3cm}\\ 
+    \hline
+\end{tabular}
+\end{Form}
+
+\section{Or \& Réputation}
+
+\begin{Form}
+\begin{tabular}{ | m{3cm} | m{3cm} | }
+    \hline
+    Or & Réputation\\
+    \hline
+    \TextField[bordercolor=,backgroundcolor=,width=3cm,value=20]{} & \TextField[bordercolor=,backgroundcolor=,width=3cm,value=0]{}\\
+    \hline
+\end{tabular}
+\end{Form}
+
+\end{document}
+

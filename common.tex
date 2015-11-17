@@ -1,0 +1,57 @@
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage[french]{babel}
+\setmainfont[Mapping=tex-text]{Gentium Book Basic}
+\setsansfont{DejaVu Sans}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{xcolor}
+\definecolor{light-gray}{gray}{0.8}
+
+\usepackage{array}
+\renewcommand{\arraystretch}{2}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{pbox}
+
+%See http://tex.stackexchange.com/questions/109467/footnote-in-tabular-environment#109471
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+
+\newcommand{\mytextfield}[1]{
+    \TextField[bordercolor=,backgroundcolor=,width=#1]{}
+}
+
+\newcommand{\myfilledtextfield}[2]{
+    \TextField[bordercolor=,backgroundcolor=,width=#1,value=#2,readonly]{}
+}
+
+\newcommand{\mycheckbox}{
+    \mbox{\CheckBox[width=1.5em,bordercolor=]{}}
+}
+
+\newcommand{\mycheckedcheckbox}{
+    \mbox{\CheckBox[width=1.5em,bordercolor=,checked,readonly]{}}
+}
+
+\newcommand{\mynumberfield}[1]{
+    \TextField[bordercolor=,backgroundcolor=,align=1,width=#1]{}
+}
+
+\newcommand{\myfillednumberfield}[2]{
+    \TextField[bordercolor=,backgroundcolor=,align=1,width=#1,value=#2,readonly]{}
+}
+
+\newcommand{\cross}{
+    \textsf{☨}
+}
+
+\newcommand{\ankh}{
+    \textsf{☥}
+}
+
+\newcommand{\caduceus}{
+    \textsf{☤}
+}
+
