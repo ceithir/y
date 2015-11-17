@@ -31,6 +31,60 @@
     \end{framed}
 }
 
+\newcommand{\unlockedhero}{
+\begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
+    \hline
+    Débloqué & Indisponible\\
+    \hline
+    \mycheckedcheckbox & \mycheckbox \\
+    \hline
+\end{tabular}
+}
+
+\newcommand{\hero}[5]{
+    \section{Présentation}
+
+    #1
+
+    \section{Caractéristiques}
+
+    \begin{description}
+        \item[Spécialité] #2
+        \item[Coût première embauche] #3
+        \item[Coût embauches ultérieures] #4
+    \end{description}
+
+    \fullbleed{#5}
+
+    \section{Équipement}
+
+    \begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
+        \hline
+        \multicolumn{2}{| m{8cm} |}{Équipement} & Information\\
+        \hline
+        \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
+        \hline
+        \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
+        \hline
+        \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
+        \hline
+    \end{tabular}
+
+    \section{Quêtes}
+
+    \begin{tabular}{ | m{7cm} | m{2.5cm} | m{2.5cm} |}
+        \hline
+        A participé à & En est revenu ? & A triomphé ?\\
+        \hline
+        \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
+        \hline
+        \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
+        \hline
+        \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
+        \hline
+    \end{tabular}
+}
+
 \chapter{Les anonymes}
 
 Les anonymes sont en nombre illimité, mais, pour d'évidentes raisons pratiques, seul un exemplaire de chaque spécialité est ici listé.
@@ -49,60 +103,37 @@ Les anonymes sont en nombre illimité, mais, pour d'évidentes raisons pratiques
 
 \chapter{Le Mnémonique}
 
-\begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
-    \hline
-    Débloqué & Indisponible\\
-    \hline
-    \mycheckedcheckbox & \mycheckbox \\
-    \hline
-\end{tabular}
+\unlockedhero
 
-\section{Présentation}
-
+\hero{
 L'homme qui se profile dans l'entrée de la taverne ne doit pas avoir plus de trente ans, mais il paraît plus vieux que vous, voire que le monde. Ses cheveux sont blancs et cassants, son regard fou, son corps tremblant. Sa démarche est toutefois assurée, et sitôt que ses yeux vous ont repéré, il s'avance de lui-même vers votre table. S'ensuit une discussion passionnante, où vous comprenez rapidement que l'homme a subi une expérience avec des puissances qu'il ne vaut mieux pas approcher.
 
 Cela l'a laissé marqué, blessé, détruit. Il n'a plus aucun souvenir de sa vie d'avant cette confrontation, mais dispose inversement d'une mémoire parfaite de tout ce qui lui est arrivé depuis (« Je n'oublie plus. Plus rien. Je me souviens de tout. Même l'alcool et les drogues n'arrivent pas à effacer les images de mon esprit. »).
 
 Malgré le mal qu'elle lui fait, la connaissance interdite continue à le fasciner, et il parcourt le monde à la recherche de nouveaux savoirs.
+}{
+Recherche
+}{
+Quête de type Recherche : Gratuit / Autre type de Quête : Le Tome Scellé
+}{
+Comme première embauche
+}{images/memory.jpg}
 
-\section{Caractéristiques}
+\chapter{L'Homme à la Main d'Acier}
 
-\begin{description}
-    \item[Spécialité] Recherche
-    \item[Coût première embauche] Quête de type Recherche : Gratuit / Autre type de Quête : Le Tome Scellé
-    \item[Coût embauches ultérieures] Comme première embauche
-\end{description}
+\unlockedhero
 
-\fullbleed{images/memory.jpg}
+\hero{
+Les mercenaires patibulaires ne sont pas si rares dans la région, mais celui-ci bat des records. Tout chez lui démontre le vétéran endurci, vivant par la guerre et pour la guerre : nombreuses cicatrices, tonsure réglementaire, démarche militaire, armes en évidence et prêtes à servir. Sa première action à son arrivée est de marcher droit sur le bar et de commander une bouteille de l'alcool le plus fort. Il l'avale cul sec, et vous remarquez alors que s'il a ôté son riche manteau et sa cotte, il a conservé ses gants et une tenue à manches longues qui cachent mal l'hypertrophie de son bras droit.
 
-\section{Équipement}
-
-\begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
-    \hline
-    \multicolumn{2}{| m{8cm} |}{Équipement} & Information\\
-    \hline
-    \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
-    \hline
-    \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
-    \hline
-    \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
-    \hline
-\end{tabular}
-
-\section{Quêtes}
-
-\begin{tabular}{ | m{7cm} | m{2.5cm} | m{2.5cm} |}
-    \hline
-    A participé à & En est revenu ? & A triomphé ?\\
-    \hline
-    \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
-    \hline
-    \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
-    \hline
-    \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
-    \hline
-\end{tabular}
-
+Ce mystère est résolu plus tard dans la soirée, quand, saoul comme un goret, il vous révèle avoir perdu tout ce qui se trouvait au-delà de son coude droit lors d'une bataille passée. Mais un alchimiste de sa connaissance lui greffa alors un bras d'armure à la place du membre perdu, le gantelet ayant été enchanté pour agir aussi efficacement que s'il avait été de chair. La folle opération réussit, et le guerrier put reprendre ses activités, avec même une efficacité accrue par les avantages de sa transformation (« Ma main de chair peut broyer le cou d'un homme sans mal, mais ma main d'acier peut tordre son armure comme si elle était de papier. »).
+}{
+Combat
+}{
+10 pièces d'or
+}{
+Comme première embauche
+}{images/steel.jpg}
 
 \end{document}
 
