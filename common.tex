@@ -19,6 +19,8 @@
 \usepackage{footnote}
 \makesavenoteenv{tabular}
 
+\usepackage{tikz}
+
 \newcommand{\mytextfield}[1]{
     \TextField[bordercolor=,backgroundcolor=,width=#1]{}
 }
@@ -53,5 +55,18 @@
 
 \newcommand{\caduceus}{
     \textsf{☤}
+}
+
+%See http://tex.stackexchange.com/questions/14696/full-page-image-as-title-page#answer-14701
+%Need to be compiled twice to work properly
+\newcommand{\fullbleed}[1]{
+    \clearpage
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[inner sep=0pt] at (current page.center) {%
+            \includegraphics[width=\paperwidth]{#1}
+        };
+    \end{tikzpicture}
+    \clearpage
 }
 
