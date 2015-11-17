@@ -1,0 +1,56 @@
+\documentclass{report}
+
+\input{common.tex}
+
+\usepackage{fullpage}
+
+\usepackage{framed}
+
+\begin{document}
+
+\tableofcontents
+
+\newcommand{\anonymous}[2]{
+    \begin{framed}
+        \begin{description}
+            \item[Spécialité] #1
+            \item[Coût première embauche] #2 pièces d'or
+            \item[Coût embauches ultérieures] Non réemployable
+            \item[A triomphé de] \begin{Form}\mytextfield{8cm}\end{Form}
+        \end{description}
+
+        \vspace{0.25cm}
+
+        \begin{Form}
+        \begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
+            \hline
+            \multicolumn{2}{| m{8cm} |}{Équipement} & Information\\
+            \hline
+            \mytextfield{4cm} & \mytextfield{4cm} & \mytextfield{4cm}\\
+            \hline
+        \end{tabular}
+        \end{Form}
+    \end{framed}
+}
+
+\chapter{Les anonymes}
+
+Les anonymes sont en nombre illimité, mais, pour d'évidentes raisons pratiques, seul un exemplaire de chaque spécialité est ici listé.
+
+\anonymous{Aucune}{2}
+
+\anonymous{Combat}{5}
+
+\clearpage
+
+\anonymous{Diplomatie}{5}
+
+\anonymous{Recherche}{5}
+
+\anonymous{Roublardise}{5}
+
+
+
+\end{document}
+
+
