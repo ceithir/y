@@ -8,12 +8,15 @@
 
 \newcommand{\anonymous}[2]{
     \begin{framed}
+        \begin{Form}
         \begin{description}
             \item[Spécialité] #1
             \item[Coût première embauche] #2 pièces d'or
             \item[Coût embauches ultérieures] Non réemployable
-            \item[A triomphé de] \begin{Form}\mytextfield{8cm}\end{Form}
+            \item[A participé à] \mytextfield{8cm}
+            \item[A triomphé ?] \mycheckbox
         \end{description}
+        \end{Form}
 
         \vspace{0.25cm}
 
@@ -335,7 +338,7 @@ Comme première embauche
 
 \lockedhero
 
-\hero{
+\herostats{
 Hirsute, débraillé, vulgaire, les qualificatifs peu aimables ne manquent pas pour désigner le nouvel arrivant. Il semble en effet tout droit sorti d'un manuel d'histoire, quelque part entre le chapitre sur la préhistoire et celui sur l'antiquité.
 
 Un peu plus petit que la moyenne, doté d'une pilosité brune abondante sur tout le corps, barbe et cheveux inclus, il ne porte pour tous vêtements que des sandales aux pieds, des braies aux jambes et un peau de lion sur le dos. Un glaive, en bronze est sa seule arme mais sa musculature exceptionnelle, plus taillée pour un ours que pour un homme, compense cela.
@@ -354,7 +357,21 @@ Combat et Diplomatie
 Gratuit
 }{
 Non réemployable. Quelles que soient les circonstances, la Légende ne fera \emph{jamais} aucune Quête pour vous après la première.
-}{images/legendary.jpg}
+}
+
+\fullbleed{images/legendary.jpg}
+
+\section{Équipement et Quête}
+
+\begin{framed}
+\begin{Form}
+\begin{description}
+    \item[Équipement ou Information] \mytextfield{8cm}
+    \item[A participé à] \mytextfield{8cm}
+    \item[A triomphé ?] \mycheckbox
+\end{description}
+\end{Form}
+\end{framed}
 
 \end{document}
 
