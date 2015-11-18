@@ -6,9 +6,12 @@
 
 \usepackage{framed}
 
-\begin{document}
+\usepackage{titlesec}
 
-\tableofcontents
+%See http://tex.stackexchange.com/questions/63390/how-to-decrease-spacing-before-chapter-title#answer-63393
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-60pt}{20pt}
 
 \newcommand{\anonymous}[2]{
     \begin{framed}
@@ -96,8 +99,24 @@
 \newcommand{\picturelesshero}[4]{
     \herostats{#1}{#2}{#3}{#4}
 
+    \clearpage
+
     \herosheet
 }
+
+\newcommand{\lockedhero}{
+\begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
+    \hline
+    Débloqué & Indisponible\\
+    \hline
+    \mycheckbox & \mycheckbox \\
+    \hline
+\end{tabular}
+}
+
+\begin{document}
+
+\tableofcontents
 
 \chapter{Les anonymes}
 
@@ -220,6 +239,30 @@ Gratuit, mais le Métamorphe devient automatiquement indisponible à la fin de l
 }{
 Comme première embauche
 }
+
+\chapter{Le Croisé}
+
+\lockedhero
+
+\hero{
+La première chose que vous remarquez chez l'homme est l'imposant symbole religieux s'étalant sur son plastron d'acier. Démesuré, ostentatoire, d'un rouge terni par la poussière du voyage mais qui a dû être éclatant un jour, c'est un message clair à destination du monde. La religion n'est pas un sujet de badinerie chez lui.
+
+Cette particularité mise à part, le reste de son apparence évoque la figure classique du chevalier errant. Une armure complète, de bonne qualité, expurgée de toute fioriture, de tout élément purement décoratif, le recouvre des pieds au cou. L'épée à sa ceinture et son fourreau suivent la même politique d'efficacité dans la simplicité. Il tient son casque d'une main, révélant un visage buriné, dissimulé derrière une barbe poivre et sel soigneusement taillée et surmonté d'un crâne qui a dû être intégralement tondu il y a peu mais sur lequel les cheveux commencent déjà à réapparaître.
+
+Lorsqu'il commande sans ironie aucune une infusion au bar, et non une quelconque boisson alcoolisée, quelques ricanements avinés se font entendre, mais l'homme les ignore avec panache. Il se contente de savourer sa boisson, calmement. Il déguste ensuite son repas dans le même climat de paix intérieure, traitant la maigre chère de l'aubergiste avec un respect qu'elle ne mérite pas, en avalant jusqu'à la dernière miette. Il le conclut pieusement d'une prière murmurée.
+
+Vous avez l'occasion d'échanger avec lui alors qu'il se repose près du feu sans qu'aucun autre client n'ose le déranger. Vous n'avez aucun mal à le convaincre de vous raconter son histoire, et s'ensuit un flot d'aventures, impliquant des voyages dans des pays exotiques et des nombreuses guerres, parfois dans le camp des vainqueurs, parfois dans celui des perdants. Vous le sentez critique, voire dégoûté, honteux sur certains des actes qu'il a pu commettre alors. Le rebondissement attendu est sa révélation divine à l'âge mûr et son entrée dans un ordre de moine combattant.
+
+Pour l'heure, son église l'a envoyé dans ce pays maudit à la recherche de ce qu'il nomme la Larme de Dieu, un artefact sacré de très grand pouvoir, dérobé par un infidèle.
+
+Vous gagnez rapidement sa confiance, et il est prêt à vous accorder son aide. Sa mission est prioritaire sur tout, mais s'il a moyen de la réaliser tout en vous aidant, il le fera avec joie.
+}{
+Combat
+}{
+Gratuit pour toute Quête \cross \ L'Orbe Transiente pour toute autre Quête
+}{
+Comme première embauche
+}{images/templar.jpg}
 
 \end{document}
 
