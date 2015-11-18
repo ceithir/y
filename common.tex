@@ -23,9 +23,10 @@
 
 %See http://tex.stackexchange.com/questions/63390/how-to-decrease-spacing-before-chapter-title#answer-63393
 \usepackage{titlesec}
-\titleformat{\chapter}[display]   
-{\normalfont\huge\bfseries}{}{20pt}{\Huge}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{}{20pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{-60pt}{20pt}
+
+\titleformat{\section}[display]{\normalfont\Large\bfseries}{}{-10pt}{}
 
 \newcommand{\mytextfield}[1]{
     \TextField[bordercolor=,backgroundcolor=,width=#1]{}
