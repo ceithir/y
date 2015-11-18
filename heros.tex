@@ -42,6 +42,14 @@
 }
 
 \newcommand{\hero}[5]{
+    \herostats{#1}{#2}{#3}{#4}
+
+    \fullbleed{#5}
+
+    \herosheet
+}
+
+\newcommand{\herostats}[4]{
     \section{Présentation}
 
     #1
@@ -53,9 +61,9 @@
         \item[Coût première embauche] #3
         \item[Coût embauches ultérieures] #4
     \end{description}
+}
 
-    \fullbleed{#5}
-
+\newcommand{\herosheet}{
     \section{Équipement}
 
     \begin{tabular}{ | m{4cm} | m{4cm} | m{4cm} | }
@@ -83,6 +91,12 @@
         \mytextfield{7cm} & \mycheckbox & \mycheckbox \\ 
         \hline
     \end{tabular}
+}
+
+\newcommand{\picturelesshero}[4]{
+    \herostats{#1}{#2}{#3}{#4}
+
+    \herosheet
 }
 
 \chapter{Les anonymes}
@@ -186,6 +200,26 @@ Un objet de coût 3 ou supérieur
 }{
 Le Fétiche en Os ou tout objet de valeur inestimable ([-])
 }{images/witch.jpg}
+
+\chapter{Le Métamorphe}
+
+\unlockedhero
+
+\picturelesshero{
+L'esprit humain a un talent naturel pour rejeter les anomalies. C'est probablement pour cela que les autres clients de la taverne ne voit qu'un aventurier parmi d'autres dans l'être assis en face de vous. Mais votre esprit expérimenté remarque lui les minuscules mutations qui se produisent constamment en lui. Les couleurs de ses cheveux, de ses yeux et même de ses vêtements changent en permanence, très légèrement à chaque fois, mais sans interruption. De même sa taille et ses proportions se modifient peu à peu.
+
+Ainsi, vous devez faire des efforts drastiques pour vous souvenir de l'apparence qu'il avait un instant plus tôt. C'est comme si une force extérieure essayait de convaincre votre esprit que la petite brune qui se tient devant vous n'était pas un grand gaillard blond voilà quelques minutes auparavant, mais qu'elle avait au contraire toujours été une rousse flamboyante aux joues tatouées.
+
+Tandis que le colosse à la barbe fleurie commande une pinte à sa mesure qui est lapée par une silhouette aux mains écailleuses dissimulée sous une robe de bure, vous entamez la conversation.
+
+Heureusement, cette personne, à défaut d'un meilleur terme pour la décrire, ne semble pas désireuse d'utiliser son étrange pouvoir pour faire le mal. Bien au contraire, elle accepte de vous aider.
+}{
+Une au choix parmi Combat, Diplomatie, Recherche et Roublardise\footnote{Choisissez avant de commencer la Quête. Vous pouvez décider la changer de nouveau avant chaque nouvelle Quête.}
+}{
+Gratuit, mais le Métamorphe devient automatiquement indisponible à la fin de la Quête, quel que soit son résultat.
+}{
+Comme première embauche
+}
 
 \end{document}
 
