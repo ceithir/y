@@ -1,0 +1,199 @@
+\documentclass{report}
+
+\input{common.tex}
+
+\setlength{\parskip}{1.3ex plus 0.5ex minus 0.3ex}
+
+\usepackage{framed}
+
+\newcommand{\gsection}[1]{
+    \section{#1}
+    \label{#1}
+}
+
+\newcommand{\glink}[2]{
+    \hyperref[#1]{#2}
+}
+
+\newcommand{\quest}[5]{
+    \begin{framed}
+        \begin{center}
+            \textbf{#1} (#2)
+        \end{center}
+        \begin{description}
+            \item[Type] #3
+            \item[Difficulté (supposée)] #4
+        \end{description}
+        #5
+    \end{framed}
+}
+
+\begin{document}
+
+\fullbleed{images/cover.jpg}
+
+\begin{center}
+{\fontsize{4cm}{0}\selectfont Y}
+\end{center}
+
+\chapter{Introduction}
+
+Des conifères gigantesques masquant le soleil. Une enfilade de grandes collines et de petites montagnes. Des villages isolés, repliés sur eux-mêmes. Quelques forteresses éparpillées, indignes du terme château, pour les surveiller. Et bien sûr, cet épais brouillard opaque et froid qui s'installe dès le coucher du soleil et subsiste jusqu'au petit matin. Pas de doute, vous êtes en Ylèdre.
+
+L'Ylèdre est une contrée où se déroulent mille légendes, mais aucune n'est réellement joyeuse, et bien peu se finissent bien. Des hommes qui doivent sucer le sang d'autres êtes humains pour survivre ou qui se transforment en loups affamés la nuit, des sorcières sacrifiant des bébés pour invoquer des démons, des spectres vengeurs qui errent dans les bois à la recherche de leurs assassins, voilà plutôt l'essence de ces histoires.
+
+Ces contes sont bien sûr faux, des versions extrêmement romancées de faits divers. La vérité est bien plus frustre et violente.
+
+Il y a des monstres en Ylèdre. Il y en a même beaucoup. Il y a des loups-garous. Il y a des vampires. Il y a des changelins. Il y a des bêtes si étranges et horribles qu'elles ne portent même pas de nom. Ils existent, ils sont présents, ils sont un élément du quotidien, combattus pied à pied par la population locale. Ici la lycanthropie, le vampirisme, ne sont pas des conséquences rarissimes d'une sorcellerie venue d'ailleurs. Ce sont des maladies comme les autres, éclatant régulièrement, avec leurs cas isolés, mais aussi leurs épidémies.
+
+Et ces afflictions ne sont pas soignées avec des baumes et des cataplasmes, mais par l'acier et le feu. Les histoires réellement terrifiantes qui circulent ne sont pas celles sur les monstres, mais parlent plutôt de mères enfonçant elles-mêmes un pieux à travers le cœur de leur progéniture aux canines un peu trop développées, de supposés métamorphes et de prétendues sorcières exécutés sans sommation ni procès par une foule en colère, de nobliaux soupçonnés d'avoir pactisé avec des puissances obscures brûlés vifs dans l'incendie de leurs demeures.
+
+Là aussi, l'exagération est de mise, mais il suffit de quelques minutes au voyageur de passage au contact d'une poignée d'ylériens pour s'apercevoir qu'ils composent un peuple aussi rude et dur que leur pays. Et les voyageurs sont bien moins rares qu'il n'y paraît au premier abord. Bien qu'officiellement rattaché au royaume voisin, l'Ylèdre est en pratique un territoire neutre, sur lequel personne n'a de réel contrôle, et est entouré de régions nettement plus riches. De nombreux contrebandiers et autres trafiquants en foulent régulièrement les chemins, y faisant transiter des marchandises de provenances douteuses. Certains ont même leur résidence principale au milieu des bois, là où ils se pensent à l'abri des autorités compétentes. D'où la deuxième catégorie de personnes errant sur les routes locales, et n'arrangeant guère les choses : les chasseurs de prime.
+
+En-dehors de ces gens de mauvaise compagnie, l'Ylèdre est principalement habité par des familles rurales, qui y survivent depuis des générations, ainsi que par des réfugiés divers, principalement religieux, persuadés que les horreurs qui vivent dans les montagnes valent toujours mieux que les persécutions de leur lieu d'origine. Si certains changent d'avis assez rapidement, d'autant plus que l'accueil des locaux est rarement amical, ils arrivent que d'autres persistent, et finissent avec le temps à fusionner avec la masse xénophobe et paranoïaque des habitants du cru.
+
+En résumé, l'Ylèdre est une terre corrompue, pervertie, désolée dans son âme sinon dans ses paysages.
+
+Vous êtes là pour corriger cela.
+
+Bien sûr, vous ne pensez pas changer le cœur des hommes du jour au lendemain. Mais un premier pas serait de régler le problèmes des monstres. Le pays n'est pas pauvre en lui-même, et s'il était possible d'en exploiter les ressources, notamment le bois et le minerai, sans que des créatures d'ombres jaillissent des profondeurs de la forêt pour vous dévorer, si les portes et les fenêtres n'avaient plus besoin d'être calfeutrés avant même que crépuscule ne soit achevé, si les vivants ne passaient plus leur temps à craindre les morts, alors peut-être y aurait-il un espoir.
+
+Et pour régler ce problème particulier, vous comptez utiliser une nouvelle stratégie. Non pas combattre la conséquence mais la cause. Vos recherches démontrent clairement que le nombre de phénomènes sortant du cadre des lois naturelles est diaboliquement supérieur en Ylèdre par rapport au reste du monde, aussi bien en fréquence qu'en intensité. Vous êtes venu ici pour comprendre la raison de ce déséquilibre, et l'anéantir.
+
+Mais alors que votre cœur s'enflamme devant cette résolution, une douleur vive traverse votre organisme, comme un puissant choc électrique qui vous tétanise. Cela ne dure qu'un instant, puis vous retrouvez le contrôle de votre corps avec juste une vague sensation de malaise. Le message est clair. Il vous est rappelé que vous devez suivre les règles du jeu. Vous n'avez pas le droit de vous impliquer trop personnellement.
+
+Qu'à cela ne tienne. Vous serez bientôt en vue de l'auberge. Et de là, vous pourrez faire ce que vous savez faire de mieux : recruter de preux héros pour agir à votre place !
+
+\chapter{Règles}
+
+\section{Un protagoniste en retrait}
+
+Dans cette aventure, vous incarnez le Vieux Sage, une mystérieuse personnalité qui erre à travers le monde pour combattre les forces du mal. Autrefois brillant et orgueilleux sorcier, bien que fondamentalement bon, vous avez écopé d'une terrible malédiction en vous frottant à trop forte partie. Dorénavant, non seulement vous ne pouvez plus utiliser vos pouvoirs, mais vous ne pouvez même pas agir directement pour tenter d'améliorer un peu les choses. Si la clé de la survie de l'humanité se trouvait à portée de main, vous ne pourriez tendre le bras sans faire une crise d'épilepsie.
+
+Toutes vos tentatives pour rompre l'enchantement se sont révélées vaines. Toutefois, il existe un moyen de contourner ce blocage. Vous avez encore la possibilité de recruter des personnes et de leur confier des quêtes. Tant que vous restez très raisonnable dans les informations et les équipements que vous leur remettez, le maléfice reste endormi. Cela vous oblige souvent à pratiquer un subtil art de communication, à base d'énigmes, d'objectifs volontairement floutés, de cadeaux à l'intérêt peu clair, pour mettre toutes les chances du côté de votre recrue sans outrepasser les limites. Il vous arrive même de vendre des objets indispensables à des héros que vous envoyez sauver le monde.
+
+Dans la pratique, vous commencez l'aventure dans une auberge, et vous n'en bougerez pas beaucoup, mais vous enverrez fréquemment des aventuriers accomplir des quêtes diverses aux quatre coins du pays.
+
+\section{Phases principales}
+
+L'aventure est divisée en une série de deux phases qui se répètent inlassablement : recrutement puis quête, recrutement puis quête, recrutement puis quête. Elles composent le cœur du jeu.
+
+\subsection{Recrutement}
+
+Régulièrement, vous pourrez choisir un aventurier parmi ceux disponibles dans le Livre des Héros ci-joint. C'est l'homme, ou la femme, ou l'être pas tout à fait humain, à qui vous désirez confier la prochaine quête à accomplir.
+
+Mais, même si vous êtes particulièrement doué pour cela, trouver du personnel de qualité pour accomplir des tâches aussi diverses que variées, souvent dangereuses et complexes, n'est pas une sinécure. Si le monde ne manque pas d'aventuriers à la petite semaine, errants prêts à accepter de faire n'importe quoi pour une bouchée de pain, ils sont généralement d'une efficacité douteuse. Les meilleurs, les plus aptes à réussir, ont quant à eux presque toujours un caractère prononcé, et systématiquement des exigences salariales d'un autre ordre, en bien ou en mal.
+
+Dans cette histoire, vous aurez donc la possibilité d'engager deux grandes catégories de protagonistes.
+
+Tout d'abord, une flopée d'anonymes à la petite semaine. Ils sont en nombre illimité, et ne coûtent pas chers. Vous aurez simplement à dépenser 2 pièces d'or pour un envoyé médiocre, sans compétence particulière, ou 5 pièces d'or pour un champion disposant d'une Spécialité, au choix entre Combat, Diplomatie, Recherche et Roublardise. Leur degré de fiabilité étant inexistant, considérez que c'est chaque fois une nouvelle tête qui se présente à vous, avec notamment un équipement vierge.
+
+Ensuite, sont également disponibles des aventuriers avec un (sur)nom, une histoire, une personnalité, des compétences propres. Outre le fait qu'ils ont parfois plusieurs Spécialités, chaque Quête dispose de sections réservées à certains héros seulement. Exploitant au maximum leurs talents particuliers, ces passages offrent souvent de bien meilleurs résultats qu'une voie victorieuse plus classique avec un anonyme correctement équipé. Également, dans le cas où un de ces énergumènes accompliraient plusieurs missions pour vous, il conserverait l'équipement et l'expérience acquise.
+
+Malheureusement, le talent a un coût, et dans le cas de ces fortes têtes, il n'est pas toujours simplement en pièces d'or sonnantes et trébuchantes. Si vous désirez recruter l'un de ces personnages particuliers, vous devrez vous rendre à la section dédiée dans le Livre des Héros, où il ou elle vous posera ses conditions.
+
+Si vous les acceptez, donnez-lui le paiement convenu si besoin est, puis passez à la phase suivante. Sinon, choisissez-en un autre ou résignez-vous à embaucher un anonyme.
+
+Sauf indication contraire, un aventurier nommé peut être recruté autant de fois que désiré, mais ses tarifs deviennent souvent très vite prohibitifs.
+
+De plus, au début, vous n'êtes en contact qu'avec six d'entre eux : Le \textbf{Mnémonique}, l’Homme à la \textbf{Main d’Acier}, le \textbf{Beau Parleur}, le \textbf{Brigand}, la \textbf{Sorcière} et le \textbf{Métamorphe}. Les autres devront être débloqués en cours d'aventure.
+
+\subsection{Quête}
+
+Une fois votre aventurier convaincu, vous devez l'assigner à une Quête disponible. Dans ce cas, rendez-vous simplement au paragraphe correspondant et suivez les instructions.
+
+Avant toute mission, vous aurez la possibilité de donner un objet, et un seul, à l'aventurier choisi, pour l'aider dans sa quête. Une information cruciale (un mot de passe par exemple) compte pour un objet pour cette limite. Les aventuriers ayant tendance à s'accrocher à leurs possessions matérielles, tout objet physique que vous leur remettrez ne pourra être récupéré en aucune façon.
+
+Exception 1 : Si l'aventurier exige un objet en guise de paiement, cela ne compte pas dans cette limite. Seules les aides volontaires que vous pouvez apporter sont limitées.
+
+Exception 2 : Si un aventurier accomplit pour vous une seconde quête, ou plus, vous avez à nouveau la possibilité lui donner un objet pour l'aider dans sa tâche. En abusant des failles, vous pourriez ainsi vous retrouver avec un aventurier ayant quatre objets à la seconde mission : deux paiements et deux aides.
+
+Sauf indication contraire, toute quête échouée peut être recommencée (tant que vous trouvez des aventuriers à envoyer au casse-pipe !) mais toute mission réussie devient définitivement indisponible. Une mission est considérée comme réussie si vous passez par un paragraphe comportant le terme \emph{Succès !} ainsi calligraphié en l'accomplissant.
+
+Une fois votre quête accomplie, ou ratée, vous devriez normalement être renvoyé sur le \textbf{50}, qui gère d'éventuels événements spéciaux se déroulant entre les phases ordinaires. Ensuite, choisissez un nouveau champion parmi ceux encore disponibles, et recommencez un tour complet.
+
+\section{Possessions, Informations et Codes}
+
+\subsection{Possessions}
+
+Dans cet aventure transiteront entre vos mains une certaine quantité d'objets plus ou moins utiles. Vous n'aurez généralement pas la possibilité de les utiliser vous-même, mais vous pourrez les confier à des aventuriers pour les aider dans leur mission.
+
+Vous commencez l'aventure avec 20 pièces d'or et les objets suivants :
+\begin{description}
+\item[{Dague en argent [5]}:] Un poignard ordinaire si ce n'est que sa lame n'est pas à base de fer mais d'un précieux métal, fléau de bon nombre d'abominations.
+\item[{Flûte traversière [1]}:] Bien que de qualité médiocre, cet instrument est capable de produire des sons tout à fait corrects entre les mains d'un joueur expérimenté.
+\item[{Pendentif sacré [2]}:] Sur ce simple médaillon de cuivre est gravé dans une écriture archaïque le nom d'un antique divinité à moitié oubliée. Cet objet ne dispose pas de pouvoirs explicites, c'est avant tout un symbole.
+\item[{Anneau de Lumière [10]}:] Cette bague enchantée rayonne dans le noir, éclairant le chemin bien plus  efficacement qu'une simple lanterne. Il n'est pas possible de l'activer ou le désactiver à volonté, mais un gant opaque suffit à dissimuler sa lumière.
+\item[{Fétiche en os [5]}:] Un macabre collier à base d'os humains. Le pendentif en est un crâne taillé, recouvert d'inscriptions impies, la cordelette des phalanges attachées entre elles. Vous l'avez récupéré, suite à un long concours de circonstances, parmi les trophées d'un inquisiteur fanatique, mais vous en ignorez les effets, s'il en a.
+\end{description}
+
+Le nombre entre crochets est la valeur estimée de l'objet, en pièces d'or. Lors d'un paiement, au lieu de dépenser de l'or en espèces sonnantes et trébuchantes, vous pouvez offrir un objet de valeur égale ou supérieure.
+
+Une valeur de [-] correspond à un objet sans valeur monétaire définie, qui ne peut être employé pour une équivalence de ce type.
+
+\subsection{Informations}
+
+Les Informations sont des données cruciales, qui comptent comme un objet quand vous les remettez à un aventurier. Elles ont cependant l'avantage par rapport aux Possessions d'être réutilisables à l'infini (vous ne perdez pas soudainement la mémoire après avoir révélé un secret).
+
+\subsection{Codes}
+
+Les Codes servent à enregistrer votre progression dans l'histoire. Ils correspondent à des événements qui se sont écoulés. Vous ne pouvez rien en faire, ce sont juste des mécanismes apparents causés par le format papier. Si cet ouvrage était un jeu vidéo, ils seraient traités en interne par le logiciel, sans jamais que vous ayez à les voir.
+
+Certains Codes ont la double fonctionnalité d'indiquer qu'un événement a eu lieu et qu'il a été accompli par un personnage précis. Dans ce genre de cas, il vous sera demandé de l'associer au personnage l'ayant débloqué, c'est-à-dire d'indiquer à côté, entre parenthèses, le nom de celui qui a effectué la quête correspondante à son acquisition.
+
+Si le Code en question a été acquis par un aventurier anonyme ou par le Vieux Sage lui-même, ne l'associez à personne, même si le texte vous le demande.
+
+\section{Réputation}
+
+Au début de cette aventure, vous n'êtes au mieux aux yeux de la population locale qu'un vieillard louche, potentiellement dangereux. Les habitants du cru seront donc peu enclins à vous apporter leur soutien, que ce soit en terme d'informations, de matériel ou simplement d'encouragements. Toutefois, au fur et à mesure que vos quêtes seront couronnées de succès, et par une habile propagande, vous pourrez petit à petit acquérir leur confiance, voire leur aide.
+Cela est symbolisé par un score de Réputation, qui démarre à 0, et montera et descendra selon les conséquences de vos actes au cours de cette aventure. Sa valeur n'a pas de limite maximum, en positif comme en négatif.
+
+Parfois, le texte vous demandera de calculer votre réputation auprès d'une fraction précise de la population, comme par exemple une organisation particulière ou une ethnie minoritaire. Dans ce cas, prenez votre score de Réputation et appliquez-lui les modificateurs indiqués dans le paragraphe en question pour estimer votre aura auprès ce groupe en particulier. Ces modificateurs ne s'appliquent que pour la durée de ce paragraphe, ne changez donc pas votre total général dans ce genre de cas.
+
+\chapter{Aventure}
+
+\gsection{1}
+
+Ce n'est pas votre première visite dans cette région, mais jusqu'à présent, vous ne vous étiez occupé que des cas isolés. Jamais auparavant n'avez-vous tenté une opération de cette ampleur. Toutefois, vos précédents passages vous ont permis de nouer quelques contacts, et vous avez réussi à convaincre le patron d'une des auberges les plus passantes de vous héberger et de vous nourrir pour la durée de votre affaire, contre il est vrai, une somme si coquette qu'il reste bien peu d'or dans votre bourse.
+
+Vous avez passé la première partie de votre quête à rassembler des renseignements, sans grand succès. En guise d'archives, vous n'avez trouvé que quelques registres paroissiaux, et les rumeurs et la tradition orale sont trop déformées pour dessiner une image claire dans votre esprit.
+
+Votre premier objectif sera donc de rassembler des informations de meilleure qualité. Pour cela, vous avez découvert plusieurs sources qui vous paraissent intéressantes.
+
+\quest{L'ordre des tueurs de monstres}{67}{Diplomatie ou Roublardise (\ankh, \cross)}{Facile}{
+Ce groupuscule s'est donnée pour objectif depuis plusieurs générations d'exterminer tout ce qu'ils estiment contraire à l'ordre naturel, et ils emploient pour cela des méthodes d'une brutalité qui fait frémir même leurs contemporains ylèdrois.
+
+Leur fanatisme, leur ascétisme, leur schéma de pensée unique, les rendent aussi peu désirables que ceux qu'il combattent. Mais ils conservent des archives détaillées de tous leurs affrontements, avec moult détails sur leurs ennemis, une mine d'informations que vous ne pouvez ignorer.
+Cependant, convaincre des personnes qui ont amené la paranoïa au rang d'art de vivre de vous ouvrir leur porte sera difficile. Il faudra soit quelqu'un d'assez doué pour les amadouer soit quelqu'un d'assez peu scrupuleux pour contourner cette difficulté.
+}
+
+\quest{Le château du comte}{23}{Recherche (\ankh)}{Facile}{
+Le meilleur endroit pour trouver des documents est encore la demeure de ceux qui contrôlaient jadis la région. Bien que toute la famille ait été éliminé par un chasseur de vampires et qu'une partie de la bâtisse ait brûlée, il devrait être encore possible de trouver des éléments intéressants en fouillant les décombres.
+
+Les lieux, désertés par l'homme, sont devenus le logis de diverses vermines, mais, au moins en apparence, les créatures les plus dangereuses ne s'y sont pas installées, d'où une mission théoriquement facile.
+}
+
+\quest{Baba Yaga}{103}{Diplomatie}{Moyenne}{
+Il est assez facile de trouver des sorcières en Ylèdre, mais elles ne sont pas forcément beaucoup plus au courant du vrai fonctionnement des choses que la moyenne des autres habitants. La plupart ne sont que des femmes plus ou moins vieilles qui connaissent deux ou trois sortilèges, voire simplement quelques filtres.
+
+La Baba Yaga, c'est autre chose. C'est la sorcière parmi les sorcières. Son existence est avérée depuis des siècles. Elle a supposément été tuée un bon nombre de fois, brûlée, noyée, découpée en morceaux, mais cela ne l'a jamais empêché de réapparaître, parfois après une longue absence, parfois dès le lendemain. Si quelqu'un peut vous en apprendre plus sur cette région, c'est bien elle.
+
+La convaincre de parler à votre émissaire plutôt que de le transformer en crapaud ne sera cependant pas une mince affaire, mais il s'agit d'un être avec lequel il est possible de négocier. Reste à trouver l'aventurier qui saura la charmer ou lui faire une offre qu'elle ne pourra refuser.
+}
+
+\clearpage
+
+\quest{La traque}{3}{Combat (\caduceus)}{Moyenne}{
+Comme trop souvent, un monstre terrorise la population. Laissant des traces qui évoquent un gigantesque loup, nul ne l'avait jamais vu et est revenu pour le décrire, mais il laisse derrière lui un sillage de victimes. Même si l'éliminer ne contribuera pas directement au grand œuvre que vous vous êtes fixé, personne, et surtout pas les habitants, ne vous en voudra si vous réglez ce problème.
+}
+
+\quest{Ceux qui vivent}{108}{Diplomatie (\cross)}{Facile}{
+Votre mission n'implique pas que de fréquenter des monstres et des tueurs de monstres. Parfois, vous devez interagir avec des personnes beaucoup plus ordinaires, que ce soit pour leur demander des informations, désamorcer des tensions critiques, ou même leur soutirer quelques deniers nécessaires à la continuation de votre tâche. Comme vous n'êtes guère présentable et avenant vous-même, vous déléguez cependant ce travail nécessitant du doigté et du charme à des aventuriers plus habiles en la matière.
+
+Spécial : Cette Quête est sans fin. Elle ne comporte pas de mention \emph{Succès !}, et peut être effectuée autant de fois que désiré, tant que vous avez assez de main d’œuvre à disposition. Un héros donné ne peut cependant l'accomplir qu'une seule et unique fois.
+}
+
+Vos objectifs à court terme maintenant définis au mieux des informations à votre disposition, ne vous reste plus qu'à désigner le premier champion qui sera chargé de s'y attaquer, parmi le \textbf{Mnémonique}, l’Homme à la \textbf{Main d’Acier}, le \textbf{Beau Parleur}, le \textbf{Brigand}, la \textbf{Sorcière}, le \textbf{Métamorphe} ou même les autres aventuriers moins hauts en couleur mais bon marché qui circulent ici.
+
+\end{document}
+
