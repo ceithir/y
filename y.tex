@@ -4,19 +4,22 @@
 
 \setlength{\parskip}{1.3ex plus 0.5ex minus 0.3ex}
 
-\usepackage{framed}
+\usepackage{mdframed}
+
+\hypersetup{
+    linkcolor=blue,
+    urlcolor=blue,
+}
 
 \newcommand{\gsection}[1]{
     \section{#1}
-    \label{#1}
+    \label{section-#1}
 }
 
-\newcommand{\glink}[2]{
-    \hyperref[#1]{#2}
-}
+\newcommand{\glink}[1]{\hyperref[section-#1]{#1}}
 
 \newcommand{\quest}[5]{
-    \begin{framed}
+    \begin{mdframed}[innertopmargin=0.5cm,innerbottommargin=0.5cm]
         \begin{center}
             \textbf{#1} (#2)
         \end{center}
@@ -25,7 +28,25 @@
             \item[Difficulté (supposée)] #4
         \end{description}
         #5
-    \end{framed}
+    \end{mdframed}
+}
+
+\newcommand{\ellipse}{
+    \begin{center}
+        *****
+    \end{center}
+}
+
+\newcommand{\success}{
+    \emph{Succès !}
+}
+
+\newcommand{\hero}[1]{
+    \textbf{#1}
+}
+
+\newcommand{\theend}{
+    \emph{Fin d'aventure.}
 }
 
 \begin{document}
@@ -96,7 +117,7 @@ Si vous les acceptez, donnez-lui le paiement convenu si besoin est, puis passez 
 
 Sauf indication contraire, un aventurier nommé peut être recruté autant de fois que désiré, mais ses tarifs deviennent souvent très vite prohibitifs.
 
-De plus, au début, vous n'êtes en contact qu'avec six d'entre eux : Le \textbf{Mnémonique}, l’Homme à la \textbf{Main d’Acier}, le \textbf{Beau Parleur}, le \textbf{Brigand}, la \textbf{Sorcière} et le \textbf{Métamorphe}. Les autres devront être débloqués en cours d'aventure.
+De plus, au début, vous n'êtes en contact qu'avec six d'entre eux : Le \hero{Mnémonique}, l’Homme à la \hero{Main d’Acier}, le \hero{Beau Parleur}, le \hero{Brigand}, la \hero{Sorcière} et le \hero{Métamorphe}. Les autres devront être débloqués en cours d'aventure.
 
 \subsection{Quête}
 
@@ -108,9 +129,13 @@ Exception 1 : Si l'aventurier exige un objet en guise de paiement, cela ne comp
 
 Exception 2 : Si un aventurier accomplit pour vous une seconde quête, ou plus, vous avez à nouveau la possibilité lui donner un objet pour l'aider dans sa tâche. En abusant des failles, vous pourriez ainsi vous retrouver avec un aventurier ayant quatre objets à la seconde mission : deux paiements et deux aides.
 
-Sauf indication contraire, toute quête échouée peut être recommencée (tant que vous trouvez des aventuriers à envoyer au casse-pipe !) mais toute mission réussie devient définitivement indisponible. Une mission est considérée comme réussie si vous passez par un paragraphe comportant le terme \emph{Succès !} ainsi calligraphié en l'accomplissant.
+Sauf indication contraire, toute quête échouée peut être recommencée (tant que vous trouvez des aventuriers à envoyer au casse-pipe !) mais toute mission réussie devient définitivement indisponible. Une mission est considérée comme réussie si vous passez par un paragraphe comportant le terme \success ainsi calligraphié en l'accomplissant.
 
 Une fois votre quête accomplie, ou ratée, vous devriez normalement être renvoyé sur le \textbf{50}, qui gère d'éventuels événements spéciaux se déroulant entre les phases ordinaires. Ensuite, choisissez un nouveau champion parmi ceux encore disponibles, et recommencez un tour complet.
+
+\subsection{Et si ?}
+
+Si d'aventure vous vous retrouviez dans une phase de recrutement où vous seriez incapable de recruter qui que ce soit, par exemple pour cause de finances désastreuses, rendez-vous immédiatement au \textbf{13}.
 
 \section{Possessions, Informations et Codes}
 
@@ -164,6 +189,7 @@ Votre premier objectif sera donc de rassembler des informations de meilleure qua
 Ce groupuscule s'est donnée pour objectif depuis plusieurs générations d'exterminer tout ce qu'ils estiment contraire à l'ordre naturel, et ils emploient pour cela des méthodes d'une brutalité qui fait frémir même leurs contemporains ylèdrois.
 
 Leur fanatisme, leur ascétisme, leur schéma de pensée unique, les rendent aussi peu désirables que ceux qu'il combattent. Mais ils conservent des archives détaillées de tous leurs affrontements, avec moult détails sur leurs ennemis, une mine d'informations que vous ne pouvez ignorer.
+
 Cependant, convaincre des personnes qui ont amené la paranoïa au rang d'art de vivre de vous ouvrir leur porte sera difficile. Il faudra soit quelqu'un d'assez doué pour les amadouer soit quelqu'un d'assez peu scrupuleux pour contourner cette difficulté.
 }
 
@@ -193,7 +219,719 @@ Votre mission n'implique pas que de fréquenter des monstres et des tueurs de mo
 Spécial : Cette Quête est sans fin. Elle ne comporte pas de mention \emph{Succès !}, et peut être effectuée autant de fois que désiré, tant que vous avez assez de main d’œuvre à disposition. Un héros donné ne peut cependant l'accomplir qu'une seule et unique fois.
 }
 
-Vos objectifs à court terme maintenant définis au mieux des informations à votre disposition, ne vous reste plus qu'à désigner le premier champion qui sera chargé de s'y attaquer, parmi le \textbf{Mnémonique}, l’Homme à la \textbf{Main d’Acier}, le \textbf{Beau Parleur}, le \textbf{Brigand}, la \textbf{Sorcière}, le \textbf{Métamorphe} ou même les autres aventuriers moins hauts en couleur mais bon marché qui circulent ici.
+Vos objectifs à court terme maintenant définis au mieux des informations à votre disposition, ne vous reste plus qu'à désigner le premier champion qui sera chargé de s'y attaquer, parmi le \hero{Mnémonique}, l’Homme à la \hero{Main d’Acier}, le \hero{Beau Parleur}, le \hero{Brigand}, la \hero{Sorcière}, le \hero{Métamorphe} ou même les autres aventuriers moins hauts en couleur mais bon marché qui circulent ici.
+
+\gsection{2}
+
+La différence de puissance entre les adversaires est insurpassable. Un combat loyal se solderait forcément par la victoire de l'horreur enracinée. Dans ce genre de cas, il ne reste qu'une seule solution : tricher.
+
+Une mélopée se fait entendre, rédigée par des êtres oubliés, mais s'échappant aujourd'hui de lèvres humaines. Un chant maudit, un appel au chaos, à la rupture des liens qui composent la réalité.
+
+À ces mots, la sphère s'illumine, s'enflamme. Elle devient la clé. Elle devient la porte. Mille milliards de mondes existent en son sein. Mille milliards d'époques se déroulent en son cœur. Elle est l'univers et elle contient l'univers.
+
+User d'un tel pouvoir comme un simple moyen de transport est une insulte, un blasphème, un sacrilège ! Mais c'est le maximum qu'un esprit humain puisse concevoir sans se détruire intégralement, même s'il doit déjà pour cela s'enfoncer au plus profond de la folie.
+
+Ainsi, l'espace se contente-t-il de se fissurer, et dans les airs d'apparaître une déchirure, un passage vers un autre lieu, si loin que la lumière du soleil ne l'atteint qu'après de longues éternités. Le tourbillon avale la bête. Il avale le globe. Il épargne ce qui est à sa place en ce lieu, mais une paire d'yeux a le temps d'apercevoir ce qui se trouve au-delà, et un rire dément retentit, symbole d'un esprit à jamais brisé.
+
+\ellipse
+
+Vous aviez envoyé pour cette mission une personne que vous ne qualifierez pas d'ordinaire, ni même peut-être de tout à fait saine d'esprit à l'origine. Mais rien à voir avec la loque bavante, hurlante, que votre nouvel aventurier trouvera quelques jours plus tard, prostrée au milieu d'une large mare de boue rigoureusement vide. Elle avait accompli sa mission, mais cela lui avait tout coûté, sinon sa vie.
+
+Notez le Code \emph{Yog-Sothoth}.
+
+Rendez-vous au \glink{150}.
+
+\gsection{3 – La traque}
+
+En recoupant les lieux où se sont déroulés les différentes attaques, il est assez facile d'identifier une zone des bois où devrait logiquement vivre la créature. Sauf que plusieurs battues successives n'ont rien donné. Des rumeurs circulent donc sur un monstre fantôme, qui ne se matérialiserait qu'au plus noir de la nuit pour fondre sur les fous qui ne sont pas à l'abri de quatre murs solides à cette heure.
+
+Mais pour l'heure, le soleil est au zénith, et une silhouette solitaire examine scrupuleusement le terrain à la recherche d'indices. Tâche malaisée dans l'obscurité de cette forêt épaisse, et après que de tant d'hommes et d'animaux l'aient foulé. Certains endroits démontrent toutefois du passage d'une créature imposante, suite de troncs brisés, des souches enfoncées, des buissons arrachés. Mais, et contre toute logique, ces voies royales s'interrompent rapidement, les dommages infligés à la nature cessant subitement devant un parterre de ronces, un ruisseau, quelques pierres, effectivement comme si la chose les ayant causés s'était volatilisée.
+
+Les victimes n'ont été découvertes que plusieurs heures après leur mort, tard dans la nuit, sous la forme d'un macabre repas sans que nul ne soit témoin de l'attaque. Elles étaient toutes seules, isolées au moment des faits.
+
+Si vous avez envoyé le \hero{Chasseur} pour cette mission, rendez-vous au \glink{71}.
+
+Si vous avez préféré quelqu'un doté de la spécialité Roublardise, rendez-vous au \glink{107}.
+
+Si c'est le Combat qui a eu votre préférence, rendez-vous au \glink{57}.
+
+Dans tous les autres cas, rendez-vous au \glink{91}.
+
+\gsection{4}
+
+Notez le Code \emph{Purification}.
+
+Dans l'absolu, vos alliés de l'Ordre considèrent cela comme une belle victoire, et ils vous débloquent, comme convenu, l'accès à leurs archives. Vous y découvrez un certain nombre d'éléments intéressants.
+
+Débloquez les Quêtes suivantes :
+
+\quest{Le marais interdit}{85}{Recherche (\ankh, \caduceus)}{Difficile}{
+Les rapports démontrent une activité plus que louche aux abords du Marais Noir, une zone humide en friche où ne sont censés vivre que les moustiques. D'après les registres, ils enregistrent un nombre élevé de disparitions d'êtres humains, et une valeur toute aussi élevée d'apparitions de monstres. Assez étrangement, l'ordre a très peu enquêté sur le sujet. Lorsque vous leur faites remarquer, ils se révèlent aussi perplexes que vous. Certains se rappellent que le sujet avait déjà été évoqué, que des mesures avaient même été prises, mais semblent incapables de se souvenir de la raison pour laquelle elles n'ont pas été appliquées. Mener votre propre enquête ne sera pas de trop.
+}
+
+\quest{Le cercle de la paix}{37}{Recherche (\caduceus)}{Moyenne}{
+Le problème inverse du précédent : une zone de la carte où aucun événement sortant de l'ordinaire ne se produit. Pas d'attaque de créatures, pas de disparition, pas de magie noire, rien. Pourtant, l'endroit n'a en apparence rien de particulier, simple colline boisée comme les autres, un classique dans cette région. Un tel calme est suspect et mériterait une investigation plus poussée.
+}
+
+Augmentez également votre Réputation de 1.
+
+Rendez-vous au \glink{50}.
+
+\gsection{5}
+
+\success
+
+Depuis le recoin où il s'est dissimulé, le fieffé gredin observe l'ordre donner la chasse à l'intrus. Pour peu, il applaudirait. Sa malheureuse victime a attiré à elle nombre de soldats, et même si la plupart des gardes sont restés à leur poste avec un admirable professionnalisme, ils ne peuvent s'empêcher d'être distraits par tout ce vacarme.
+
+Lorsque le vieillard a demandé au ruffian de s'infiltrer dans les locaux de cette organisation fanatique, il a failli refuser, tant la récompense monétaire était faible par rapport au risque. Mais il avait un vieux compte à régler avec ces champions auto-proclamés de la justice, et c'était l'occasion de joindre l'utile à l'agréable.
+
+Après plusieurs jours passés à observer les lieux, se renseigner auprès des habitants, étudier les entrées et les sorties, il fut convaincu qu'il n'était pas possible de prendre cette place d'assaut sans ajouter une variable à l'équation.
+
+Pour corriger cela, il recruta un baluchonneur sans ambition, officiellement pour faire le travail à sa place, officieusement pour lui offrir une splendide distraction.
+
+Empruntant le chemin défriché par son malavisé partenaire toujours en fuite, il se faufile dans la bâtisse, progressant d'un pas sûr tout en esquivant habilement quelques pièges, alarmes et gardes encore actifs.
+
+Car il est et reste un meilleur voleur que tous les voyous bas de gamme qui pullulent dans cette région.
+
+\ellipse
+
+Votre mercenaire pose devant vous une liste de notes griffonnées à la va-vite, contenant pêle-mêle des croquis de cartes, des passages recopiés en diverses langues, et ses propres remarques, avec des flèches et des cercles partout.
+
+Vous avez ensuite une intéressante discussion avec lui. Il a remarqué plusieurs éléments d'intérêt.
+
+Débloquez les Quêtes suivantes :
+
+\quest{La secte du renouveau}{56}{Roublardise ou Combat (\ankh, \cross)}{Difficile}{
+La secte du renouveau est un groupuscule religieux hérétique, officiellement éliminé à plusieurs reprises dans l'histoire, mais qui est toujours parvenu à se reconstituer avec le temps. Elle dispose d'une base très active en Ylèdre, et l'ordre est récemment parvenu à découvrir la localisation de leur principale cache. Ils préparent en ce moment-même un assaut de grande envergure, et il vous faudra vous hâter si vous voulez récupérer des informations de l'autre côté de la barrière avant qu'ils n'en restent que des cendres purifiées.
+}
+
+\quest{Le marais interdit}{85}{Recherche (\ankh, \caduceus)}{Difficile}{
+Les rapports démontrent une activité plus que louche aux abords du Marais Noir, une zone humide en friche où ne sont censés vivre que les moustiques. D'après les registres, ils enregistrent un nombre élevé de disparitions d'êtres humains, et une valeur toute aussi élevée d'apparitions de monstres. Assez étrangement, l'ordre a très peu enquêté sur le sujet. Quelques soldats ont bien été envoyés, mais votre employé n'a trouvé aucune trace de leurs témoignages. Mener votre propre enquête ne serait pas de trop.
+}
+
+\clearpage
+
+\quest{Le cercle de la paix}{37}{Recherche (\caduceus)}{Moyenne}{
+L'exact inverse du problème précédent : une zone de la carte où aucun événement sortant de l'ordinaire ne se produit. Pas d'attaque de créatures, pas de disparition, pas de magie noire, rien. Pourtant, l'endroit n'a en apparence rien de particulier, simple colline boisée comme les autres, un classique dans cette région. Un tel calme est suspect et mériterait une investigation plus poussée.
+}
+
+Le cambrioleur a encore d'autres informations à vous transmettre. Il n' a accédé pour l'instant qu'aux rapports ordinaires de l'ordre, mais a découvert l'existence d'une réserve, fortement gardée, où sont entreposés les manuscrits trop précieux pour être détruits et trop maléfiques pour être laissés en liberté. Une mine d'informations extraordinaire, à laquelle il pense pouvoir accéder, contre un tarif qu'il juge très raisonnable par rapport au danger de la mission : 10 pièces d'or !
+
+Si vous avez de quoi le payer et désirer le faire, rendez-vous au \glink{109}.
+
+Sinon, il prend congé. Rendez-vous au \glink{50}.
+
+\gsection{6}
+
+\success
+
+Vous remerciez votre missionnaire pour son aide précieuse, puis vous vous plongez dans les documents qui vous ont été apportés. Il s'agit du récit de la déliquescence de la noble famille, du statut de maîtres relatifs de cette contrée à celui de monstres pourchassés par leurs propres sujets. Les textes sont de différentes plumes (le chapelain, le frère cadet, l'économe) mais sont cohérents entre eux. Apparemment, la situation a brusquement dégénéré après une visite du maître de maison au Marais Noir, un lieu particulièrement inhospitalier de l'Ylèdre. L'objectif de ce voyage est peu clair, mais à son retour, le comte n'était plus tout à fait humain.
+
+Vous essayez de vous renseigner sur ces marais, mais vous n'en apprenez guère plus que ce que vous ne savez déjà : c'est un bourbier infâme, un piège collant où la boue peut facilement s'affaisser et avaler avec elle homme, bête ou monstre, sans discernement. Il va falloir mener l'enquête vous-même. Enfin, presque.
+
+Débloquez la Quête suivante :
+
+\quest{Le marais interdit}{85}{Recherche (\ankh, \caduceus)}{Difficile}{
+Le marais, ou ce qu'il abrite, semble directement lié aux problèmes de prolifération des morts-vivants en l'Ylèdre. Mais impossible d'en savoir plus sans s'y rendre directement.
+}
+
+Rendez-vous au \glink{50}.
+
+\gsection{7}
+
+Vous connaissez maintenant tous les acteurs majeurs de l'Ylèdre, et avez réussi à gagner leur confiance indépendamment. Reste à les convaincre de travailler ensemble, qui plus est sur un projet pharaonique.
+
+L'ordre est le premier groupe à qui vous vous ouvrez. Après quelques tentatives malavisées d'éliminer eux-mêmes la créature des marais, ils se rangent à votre avis que, dans l'état actuel des choses, il n'est pas possible de faire mieux que de la sceller. Ils assureront la sécurité du chantier, une tâche nécessaire en cette contrée.
+
+Les sorcières sont assez faciles à amadouer, ou plutôt à acheter. Il suffit d'y mettre le prix. Persuader les fées de faire équipe commune avec elles est une autre paire de manches. Mais le petit peuple est un peuple libre, et même si la plupart s'y refusent, d'autres se portent courageusement volontaires pour vous aider. En unissant tous leurs pouvoirs, ils produisent des charmes capables de protéger leurs porteurs de l'influence négative de la bête durant un certain temps. Les deux clans opposés de jeteurs de sort ne sont cependant pas encore assez ouverts pour s'exposer publiquement, et refusent tout contact direct avec le reste de l'équipe, préférant passer par des intermédiaires sûrs.
+
+La force vive des travailleurs est assurée par les habitants ordinaires, auxquels se sont mêlés un grand nombre de membres du Peuple des Ombres. Pour les premiers, l'or, fourni par l'ordre (et indirectement par la secte du renouveau), est une incitation suffisante, pour les seconds, c'est l'espoir d'une tranquillité retrouvée qui les fait agir.
+
+Et la prison prend forme. À chaque brique posée, le monde semble un peu moins terne, un peu moins terrible. Et bientôt l'engeance impie est enfermée, ses ondes malfaisantes contraintes, son influence corruptrice affaiblie.
+
+Le sceau n'est pas parfait, en partie à cause du terrain difficile, en partie car le maître du chantier n'a qu'une connaissance de seconde main sur sa conception. Mais maintenant, l'existence de la créature est connue de tous, ce qui diminue déjà de beaucoup son aura pernicieuse.
+
+Toutefois, cela reste un emprisonnement, pas une solution pérenne. Peut-être qu'ainsi isolée, la bête finira par mourir de faim, mais il est plus probable qu'elle survive aux années, attendant son heure.
+
+Cependant, en cet instant, non seulement, la racine du mal en Ylèdre est enfermée, mais vous avez qui plus est réussi à faire travailler main dans la main les différentes factions d'un pays déchiré.
+
+Notez le Code \emph{Union} et augmentez votre Réputation de 5.
+
+Si vous avez décidé de maintenir prisonnier le messie non-mort, rendez-vous au \glink{63}. Sinon, rendez-vous au \glink{76}.
+
+\gsection{8}
+
+Les pièces du puzzle se mettent en place. Un être ou une chose d'une grand puissance n'a de cesse de ranimer les morts, même ceux qui ont été éradiqués à plusieurs reprises. La secte a des racines anciennes, profondes et vivaces en ces lieux, symbolisées par leurs temples décrépis mais toujours en activité, et malgré les difficultés et les fréquents affrontements, n'en ait jamais réellement parti.
+
+Tant d'acharnement vous étonne, aussi parcourez-vous de nouveau toutes les informations dont vous disposez à leur sujet. Et vous trouvez enfin ce que vous cherchiez depuis le début dans leurs textes sacrés. Alors que tous les autres psaumes sont dans un style archaïque, démodé, comprenant des mots ayant totalement disparus du vocabulaire, un passage est résolument plus moderne, utilisant des tournures de phrases passées mais pas antiques. Un chant à la gloire de leur messie, le non-mort originel :
+
+\textit{Il est le premier et le plus parfait des ressuscités. Il a tout les atouts de la première vie, mais aucune de ses tares. Il marche parmi nous, et sous ses pas le chaos de la nature est remplacé par l'ordre divin.} [...] \textit{Les mécréants, craignant la vérité qu'il apportait, le jugèrent, le condamnèrent et sous la terre ils l'enfermèrent. Mais ne peut mourir ce qui est déjà mort, et dans sa prison de roches et de pierres, l'Élu attend son heure.}
+
+Vous débloquez la Quête :
+\clearpage
+
+\quest{L'avatar}{95}{Combat (\ankh)}{Insensée}{
+Les adeptes ne vivent peut-être pas sous terre simplement pour échapper aux persécutions. Peut-être cherchent-ils quelqu'un, quelqu'un dont la simple présence est suffisante pour modifier l'équilibre de la nature. Avec cette hypothèse en tête, un second examen de leurs caches risque d'apporter de troublantes révélations.
+}
+
+Notez \emph{Eurêka}.
+
+Retournez au \glink{50}.
+
+\gsection{9}
+
+Vous faites un rêve étrange. Une créature du fond des âges, une monstruosité cyclopéenne qui ne peut être réellement décrite qu'à l'aide de termes barbares issues de langues oubliées, cherche à s'emparer de vous, à dévorer votre esprit comme votre âme. Mais une petite femme pitoyable, un épouvantail avec juste la peau sur les os, s'interpose et l'arrête, sans effort apparent.
+
+Au réveil, vous avez déjà presque tout oublié, et les derniers restes du songe ne survivront guère longtemps à la lueur de l'aube.
+
+Notez le Code \emph{Mémoire}.
+
+Rendez-vous au \glink{93}.
+
+\gsection{10}
+
+\gsection{11}
+
+L'histoire qui s'échappe, se découvre, parle d'un autre temps, d'un autre âge. Une époque où la corruption ne s'était pas encore installée en ces terres, où la nature était plus clémente, où une ville florissante s'étendait en lieu et place de ce marais putride. Une cité riche, cultivée, ouverte sur le monde et en abritant une des merveilles : sept obélisques, de sept roches différentes, gravés de millions de signes, contenant chacun un septième de toute la connaissance du monde. Sur celui de granite, la somme des sciences appliquées, en agriculture, en construction, en métallurgie. Sur celui de marbre, les arts écrits, la littérature, la poésie, le théâtre. Et sur celui d'obsidienne, les secrets des arts obscurs, de la sorcellerie, de ce qui est au-delà du voile.
+
+Et à la lumière de ces nouvelles informations, la vision des lieux change. Des plate-formes rocheuses au milieu de la boue se révèlent être non des plaques naturelles, mais des sommets de bâtiments enfouis. Une métropole enterrée se dévoile sous la boue, l'eau et la végétation.
+
+Et alors un fol espoir naît dans le cœur de l'érudit. Il se presse vers ce qui a été autrefois la grande place, maintenant une vaste étendue gluante, ni solide, ni liquide. Mais au milieu de celle-ci, dépasse encore une pointe d'obsidienne. Et l'homme, tel un possédé, se rue sur elle, et commence frénétiquement à creuser, à mains nues.
+
+Les premiers symboles apparaissent. Tant de connaissances, tant de savoir. Un influx continu de nouvelles réponses mais aussi de nouvelles interrogations envahit l'esprit du chercheur alors qu'il ne cesse de creuser, de s'enfoncer toujours plus loin dans la vase, ignorant de l'horloge qui avance, des tremblements de froid dans son organisme trempé, ou de l'étau de plus en plus en fort de terre et d'eau mélangées. Il y a tant à découvrir, il n'a pas le temps de se soucier de ces détails. Ainsi continue-t-il à s'enfoncer, vers l'illumination.
+
+Rendez-vous au \glink{33}.
+
+\gsection{12}
+
+Après avoir parcouru attentivement plusieurs fois la crypte, votre spécialiste trouve enfin ce que son esprit aiguisé s'attendait à trouver : l'indispensable passage secret que tout noble mal-aimé se doit de posséder, particulièrement s'il a outrepassé la durée de vie que la nature lui a accordé. Passage étroit, assez court, se terminant en cul-de-sac par une petite pièce carrée, ne comportant pour tout meuble qu'un sarcophage ouvert. Sur le sol repose un autre pieu, cette fois à pointe d'argent et tâché de sang.
+
+Dans le tombeau se trouve un cercueil fracassé, et dans celui-ci des morceaux d'homme : autour d'un squelette encore intact, des organes, des muscles, des morceaux de chair, ont partiellement repoussé, reconstituant intégralement un visage aux canines proéminentes, un bras droit, un morceau de hanche, un bout de bassin, mais laissant encore à nu, bien visible entre les côtes, un cœur ne battant pas. L'ensemble évoque un écorché de biologie, en beaucoup plus malsain.
+
+Comme s'il sentait qu'il était observé, le cadavre se met soudain à bouger, et avec une promptitude que sa décrépitude ne laissait pas suggérer, se jette sur la personne ayant dérangé son repos.
+
+Si c'est le \hero{Mage} qui est présent, rendez-vous au \glink{53}.
+
+Si ce n'est pas le cas, mais que vous avez choisi quelqu'un disposant d'une Spécialité en Combat, d'une arme en argent ou d'un symbole sacré, rendez-vous au \glink{65}.
+
+Sinon, rendez-vous au \glink{31}.
+
+\gsection{13}
+
+Vous êtes seul dans la taverne, attendant une aide qui ne viendra pas. Votre quête vous paraît progresser, mais lentement, péniblement, laissant une pile de morts et de disparus derrière elle. Vos finances sont à sec et votre réputation à terre. Vous êtes devenu un oiseau de sinistre augure que les gens biens évitent. Plus personne ne veut faire affaire avec vous.
+
+Bon, il ne sert à rien d'insister. Vous remontez dans votre chambre, faites vos bagages et repartez. D'ici quelques années, quand les souvenirs de vos échecs se seront tassés, vous reviendrez et recommencerez. Mais d'ici là, vous allez devoir vous racheter une réputation. Il paraît qu'ils ont une invasion de dragons dans le nord. Un problème facile à résoudre, idéal pour redorer votre blason à peu de frais. Alors en route !
+
+\theend
+
+\gsection{14}
+
+\gsection{15}
+
+Vous vous réveillez pâteux et épuisé après une très mauvaise nuit, encore une fois. À nouveau, vous avez l'impression que quelque chose a pillé votre esprit. Mais cette fois, vous étiez préparé. Vous passez l'essentiel de la matinée à relire vos notes, à la recherche des éléments que vous pourriez avoir oublié. Et effectivement, vous en trouvez. Votre système, bien que primitif, semble avoir fonctionné.
+
+Notez le Code \emph{Mémoire}.
+
+Rendez-vous au \glink{93}.
+
+\gsection{16}
+
+\gsection{17}
+
+L'homme s'avance sans crainte dans les ténèbres. Il ne peut imaginer que s'y trouvent pires horreurs que celles qu'il a déjà aperçues. La perceptive d'un accident, d'une chute, ne l'effraie pas non plus. Au contraire, c'est avec soulagement qu'il accueillerait une mort aussi banale, une libération rapide des tourments de ce qu'il ne peut oublier.
+
+Bientôt, son environnement change. Des ténèbres inconnues il passe à un aperçu du paradis, qui le laisse tout autant de marbre. Cela ne peut être qu'une illusion. Il n'y a pas de paradis. Il n'y a pas de dieux bienveillants, pas de refuges possibles. Il n'y a qu'eux, qui attendent leur heure.
+
+Et, protégé de la folie extérieure par la sienne propre, il continue son chemin, insouciant.
+
+Rendez-vous au \emph{44}.
+
+\gsection{18}
+
+\success
+
+L'infiltration a été un succès. Votre fouine vient de revenir, et vous ramène un grand nombre d'informations que vous vous hâtez de transmettre à l'ordre : la disposition des lieux, une estimation du nombre de personnes présentes, les principaux chemins d'accès et de sorties... Seuls quelques recoins trop surveillés sont encore inconnus, mais les précieuses données sont estimées suffisantes pour préparer l'offensive.
+
+Vous ne vous en mêlez pas, mais en obtenez les échos. Une centaine de frères de l'ordre se sont engouffrés dans les mines, prenant par surprise des adorateurs en nombre similaire. Ce fut cependant un combat de longue haleine, une guérilla dans le dédale des galeries, et les attaquants perdirent nombre d'hommes. Plusieurs meneurs réussirent aussi à s'enfuir, mais la plupart furent capturés ou éliminés. L'idole hérétique fut jetée à bas et brisée en morceaux, et les trésors du temple pillés, pour la cause.
+
+Pendant ce temps, vous lisez les documents qu'a réussi à se procurer au passage votre spécialiste en infiltration : une copie des principaux textes sacrés de la secte, une série de psaumes rassemblés d'une écriture serrée sur des parchemins de récupération. Probablement compilée et oubliée par quelque novice, elle forme une bonne introduction à leur religion.
+
+Sans surprise, son credo est la résurrection des morts, bien qu'elle soit bien plus libertaire que d'autres sur le sujet. Ainsi, les morts-vivants supérieurs, c'est-à-dire ceux dotés de conscience comme les vampires ou les liches, sont considérés comme des ressuscités à part entière, des êtres bénis à qui le seigneur a offert le don de seconde vie. L'idéal absolu des adeptes semble d'ailleurs être la seconde vie éternelle, débarrassée une fois pour toutes du risque de la mort.
+
+Augmentez votre Réputation de 2 et notez le Code \emph{Religion}.
+
+Rendez-vous au \glink{4}.
+
+\gsection{19}
+
+\gsection{20}
+
+\success
+
+« Le petit peuple a entendu votre appel et accepte de vous aider. »
+
+À ces mots, le cercle de chevaliers se transforme en une haie d'honneur, le long de laquelle s'avance la maîtresse des lieux. Vêtue d'un antique toge, un diadème d'or posé sur son ample chevelure blonde, la lumière semble passer à travers elle comme à travers un prisme, lui donnant un aspect aussi resplendissant que fragile, éphémère.
+
+Une reine. Nul besoin de connaître le protocole pour savoir qu'il est nécessaire de mettre genou à terre et d'attendre qu'elle parle à nouveau, sans chercher à la brusquer.
+
+« Le petit peuple n'a pas choisi de s'isoler en ces terres obscures de son plein gré. Il y est venu voilà bien longtemps, à l'époque où cet endroit foisonnait de vie et de magie. Puis la corruption est arrivée et a perverti hommes, bêtes et même certains d'entre nous. Pour nous protéger, nous avons été contraints de nous enfermer nous-mêmes derrière de nombreuses barrières, des murailles de charmes et de sortilèges. Nous ne les briserons pas pour quelques belles paroles, pas plus que je n'exposerai la vie et l'âme du moindre de mes sujets pour un si faible prix. Néanmoins, votre quête est noble, aussi avons-nous décidé de vous offrir une aide matérielle. »
+
+Un présent enchanté est alors amené sur un plateau d'argent, porté à bout de bras par deux minuscules fées voletant dans les airs. Il est accepté avec de multiples courbettes.
+
+« Si vous souhaitez réellement guérir cette contrée, continue la reine, vous devrez vous rendre là où tout a commencé. En sortant d'ici, suivez la direction du soleil couchant. Vous y trouverez une haute montagne solitaire, une jeune pousse de roches et de colère. Escaladez-la, puis plongez en son cœur. Là vous trouverez des réponses... Ou la folie. »
+
+Et sur ces mots, l'entretien est terminé. Dans un tourbillon de feuilles, arène et spectateurs cessent d'exister. Ne reste qu'une silhouette humaine au milieu de la clairière déserte, ses possessions matérielles étalées à ses pieds, parmi laquelle son nouveau trésor.
+
+Notez le Code \emph{Féerie} et associez-le au héros ou à l'héroïne qui vient de l'obtenir.
+
+\ellipse
+
+« Voilà toute l'histoire. »
+
+Vous caressez votre barbe en réfléchissant. Ainsi, le peuple des lutins, des gnomes et des fées vit encore en ces lieux. Qu'ils aient en plus accepté de vous aider, même sommairement, est déjà miraculeux en soi. Vous contemplez d'ailleurs leur présent, qui vous a été transmis sans rechigner bien longtemps. Rendez-vous au \glink{61} pour savoir de quoi il s'agit.
+
+Ils vous ont également donné une précieuse nouvelle piste. Vous débloquez la Quête suivante :
+
+\quest{Les cavernes du début du monde}{51}{Recherche}{Difficile}{
+Vous pensez avoir identifié la montagne que la royale fée a évoqué. Si vous avez bien compris ses paroles, au sommet de celle-ci devrait se trouver une grotte contenant des mystères oubliés. Vous ignorez quoi exactement, mais tous vos instincts vous préviennent que vous n'aimerez sans doute pas ce qui s'y trouve.
+}
+
+De plus, augmentez votre Réputation de 2.
+
+Le \hero{Croisé} est dorénavant disponible.
+
+Rendez-vous au \glink{50}.
+
+\gsection{21}
+
+L'Ylèdre est une région pleine de secrets. Certains ne sont connus que d'une seule personne, d'autres n'ont de secret que le nom. Parmi tous ces mystères se trouve une histoire qui ne se transmet que de sorcière à sorcière. Il existe au fond d'un certain bosquet un arbre à la silhouette torturée qui fut autrefois une voyante exceptionnellement douée. Son talent était indéniable, mais son honnêteté malheureuse. Ses prédictions fâchèrent quelqu'un qu'il ne fallait pas provoquer. Ses pieds devinrent alors racines, ses mains branches, son corps tronc. Son esprit lui resta intact, emprisonné dans le bois. Sans yeux pour voir, sans oreilles pour entendre, sa vie devint un enfer, éternellement plongée dans l'obscurité et le silence.
+
+Toutefois, ses dons de prescience persistent, et pour qui sait communiquer avec les plantes, il est possible de lui soutirer quelques informations.
+
+Aujourd'hui, une vieille sorcière s'efforce de l'interroger à propos des lubies d'un autre vieillard. Une éternité de souffrance, entrecoupée de quémandes, n'a cependant pas rendu pas la pythie très coopérative, et si la magie la condamne à répondre, elle ne l'oblige pas à être clair :
+
+« La mémoire est la vie. L'oubli est la mort. Les mots écrits survivent quand les pensées s'effacent. Dans le grand livre se trouve la clé des souvenirs perdus dans l'obscurité. »
+
+Notez le Code \emph{Sibylle}.
+
+\ellipse
+
+Décrypter les prophéties n'est jamais une partie de plaisir. Tant de cas de figures à envisager, d'interprétations à explorer pour au final n'acquérir aucune certitude. Cependant, vous ne pouvez vous permettre de laisser échapper la moindre piste, aussi ténue soit-elle.
+
+Vous vous mettez donc au travail, analysant chaque mot, chaque tournure, à travers de le prisme de ce que vous avez déjà découvert sur cette région désolée.
+
+Si vous possédez le Tome Scellé, rendez-vous au \glink{144}.
+
+Sinon, votre bonne volonté n'est malheureusement pas couronnée de succès. Après avoir perdu beaucoup trop de temps en vaines spéculations, vous vous décidez enfin à mettre de côté les phrases énigmatiques. Pour le moment.
+
+Rendez-vous au 50.
+
+\gsection{22}
+
+Si vous possédez le Tome Scellé et désirez le consulter, rendez-vous au \glink{28}.
+
+Sinon, vous pouvez faire jouer quelques contacts fort savants sur ce genre de sujets, mais vivants loin d'ici, ce qui va prendre un peu de temps. Quand vous aurez accompli trois nouvelles phases de recrutement, et les quêtes correspondantes, vous pourrez vous rendre au \glink{99} pour y parcourir les informations recueillies.
+
+Une fois vos recherches terminées, rendez-vous au \glink{93}.
+
+\gsection{23 – Le château du comte}
+
+La forteresse se dressait au sommet d'une petite montagne escarpée, un flanc face au vide. Une position stratégique imbattable, si quelqu'un avait voulu l'attaquer de front avec une armée. Mais les flammes n'en ont eu cure. Maintenant il n'en reste que des ruines noircies, qu'hommes et bêtes évitent. Mais aujourd'hui, une silhouette armée d'une pelle et d'un grand sac entame l'ascension au petit matin. À dix heures, après un premier tour d'exploration infructueux, elle commence à creuser. En début d'après-midi, elle met à jour un passage ayant échappé aux flammes.
+
+À l'exception des blattes et des araignées, le souterrain est désert. Fort étendu, il englobe les restes d'une cave à vin, quelques réserves de venaison, une salle débordant de documents poussiéreux, et bien sûr la crypte. Celle-ci porte trace des violents combats qu'elle a abrités. Des morceaux de squelettes sont éparpillés un peu partout, la surface de certains murs a partiellement brûlé ou fondu, comme attaquée par un incendie localisé ou un acide, le sol est strié de griffures d'une bête ayant des crocs assez solides pour marquer de la pierre de taille, et un pieu est encore profondément enfoncé dans la paroi intérieure d'un cercueil, là où se serait trouvé le cœur de son occupant s'il y en avait encore un.
+
+Si vous avez envoyé en mission quelqu'un disposant d'une Spécialité en Recherche, rendez-vous au \glink{12}.
+
+Sinon, rendez-vous au \glink{81}.
+
+\gsection{24}
+
+Une chance surnaturelle semble protéger votre bandit. Les rondes des gardes paraissent naturellement l'éviter, un des guetteurs s'absente pour un besoin naturel juste au bon moment, la serrure se révèle triviale à forcer… Le destin conspire pour l'épauler.
+
+Rendez-vous au \glink{127}.
+
+\gsection{25}
+
+Vous n'êtes pas aussi discret que vous voudriez l'être. Les gens murmurent en vous regardant, s'interroge sur le défilé de personnages louches que vous côtoyez. Vous vous efforcez de paraître le plus inoffensif possible, voire un peu gâteux, pour prévenir toute initiative malheureuse à base de fourches et de torches.
+Cependant, à toute chose malheur à son bon, car votre petite réputation attire aussi des gens de meilleure compagnie.
+
+La \hero{Princesse} est dès maintenant disponible.
+
+Si vous en êtes aussi à votre septième recrutement, rendez-vous au \glink{52}.
+
+Sinon, il est pour un nouveau cycle Recrutement/Quête de commencer.
+
+\gsection{26}
+
+Une sensation de déjà-vu. L'impression notable qu'une scène passée est en train de se produire. Besoin de se concentrer. De voir au-delà des apparences. Pas soleil. Nuit. Pas grotte. Marais. Créature modifie pensées. Résister. Se rappeler.
+
+Dans une tentative désespérée de reprendre le contrôle de ses sens, l'être solitaire, agité de soubresauts dans la caverne vide, se mord violemment le poignet. Un acte stupide, irréfléchi, mais efficace.
+
+Des bribes de souvenirs commencent à lui revenir, lui permettant de recomposer le fil des événements. L'illusion percée à jour perd alors tout impact et se désagrège d'elle-même.
+
+Le piège était le même que dans le marais, mais en beaucoup plus fort, en beaucoup plus subtil. Mais le chausse-trappe mental du bourbier a comme unique avantage d'avoir fourni un bon entraînement mental, permettant de triompher de celui-ci aussi.
+
+Rendez-vous au \glink{44}.
+
+\gsection{27}
+
+La Baba Yaga renifle la personne qui se trouve en face d'elle. Elle sent les effluves des noires sorcelleries qu'elle n'a pas hésité à employer lorsque le besoin s'en est fait sentir, elle sent la graine du mal. C'est un être à la morale flexible, qui ne demande qu'à être assouplie encore un peu plus. Alors l'antique sorcière décide de voir jusqu'à quel point. Elle extrait de son inventaire un objet de grand pouvoir qu'elle est prête à céder en échange d'un service ignominieux. Elle énonce ses termes, et, après une courte négociation, ils sont acceptés, à sa plus grande surprise.
+
+Le sabbat est convoqué dès le lendemain. Seules les sorcières dignes de ce nom répondent à l'appel, les autres ayant bien trop peur de la Baba Yaga. Treize à former le cercle elles sont quand le sacrifice leur est amené, comme convenu, encore vivant. L'énergie issue de la tendre chair lui rend des années de vie, et c'est guillerette qu'elle offre sa sombre bénédiction à l'ombre sous forme humaine qui lui a fourni.
+
+Notez le Code \emph{Sabbat}, et associez-le à celui ou à celle qui vient de le débloquer. Puis diminuez votre Réputation de 2.
+
+\ellipse
+
+C'est d'une voix sans émotion, contenue, morne, que vous recevez un rapport étrangement élusif. Vous préférez ne pas creuser la question. Le soutien de la Baba Yaga vous est maintenant acquis, ou du moins elle ne s'opposera pas directement à vous, et c'est déjà un exploit non négligeable.
+
+Le présent qu'elle vous a indirectement offert, tant sa cible initiale semble heureuse de vous le transmettre, est un épais ouvrage ayant des siècles derrière lui. L'âge l'a décati, et il tient maintenant plus du paquet de feuillets emprisonnés entre deux tranches de cuir racorni que du vrai livre relié.
+
+Mais plus que l'ancienneté, il exhale le mal, le pouvoir, la connaissance interdite. Il est maintenu fermé par des cordelettes entremêlées de fils d'argent, qui ont été récemment dénouées et renouées. Vous avez une bonne idée de l'identité du coupable, et n'êtes guère rassuré par le fait qu'il veuille s'en débarrasser aussi vite après l'avoir ouvert.
+
+Ajoutez un exemplaire du Tome Scellé [-] à vos possessions.
+
+La sorcière du fond des âges a aussi parlé de trouver ses doubles inversés, ses contemporains des contes, ceux qui vivent par la lumière mais se cachent dans l'ombre.
+
+Débloquez la Quête suivante :
+\clearpage
+
+\quest{Le cercle de la paix}{37}{Recherche (\caduceus)}{Moyenne}{
+La Baba Yaga a désigné cette zone de la forêt comme abritant des êtres qui pourraient vous aider. Elle semble tout à la fois les mépriser et les respecter, mais fait beaucoup de mystères sur leur compte. À vous d'aller voir ce qu'il en est.
+}
+
+Et surtout, l'antique sorcière est remontée dans ses souvenirs pour vous offrir un aperçu du passé.
+
+Rendez-vous au \glink{72}.
+
+\gsection{28}
+
+Il y a bel et bien un chapitre consacré à des créatures similaires à celle aperçue dans le marais. Son contenu n'est cependant pas de très bon augure. Elles sont nommées les enfants des dieux, les graines des rêves, les bourgeons de l'horreur. Ce sont des êtres se nourrissant du chaos, de la peur, de la haine. Elles altèrent naturellement leur environnement pour le conformer à leurs besoins, et ce sur tous les plans à la fois. Plus le temps passe, plus elles grandissent tandis que le monde où elles poussent sombre dans la folie et la destruction.
+
+Une seule peut suffire à ravager une planète entière. Mais le pire, c'est que, comme leur nom l'indique, ce ne sont que des bébés. Et après une éternité à baigner dans les remous du chaos, l’œuf éclot. Et là, ce sont des univers qui peuvent mourir.
+
+L'ouvrage n'indique aucune méthode pour déraciner le mal avant qu'il ne soit trop tard, ne dit même pas si c'est possible. Mais il décrit avec une joie morbide les conséquences néfastes de la simple croissance de ces créatures.
+
+Vous dormez bien mal cette nuit-là.
+
+Rendez-vous au \glink{93}.
+
+\gsection{29}
+
+Suivant un rituel bien huilé, tous les rideaux se soulèvent soudain, déversant un flot de fidèles encapuchonnés... Et armés !
+
+Un homme que tout indique comme le grand prêtre de cette sinistre messe prend alors la parole pour sommer l'intrus de se rendre.
+
+S'il s'adresse au \hero{Croisé}, rendez-vous au \glink{46}.
+
+S'il parle au \hero{Chasseur}, à l'homme à la \hero{Main d'Acier}, au \hero{Mage}, à la \hero{Légende} ou à un quelconque  combattant revêtu de la Cape de Crocs, rendez-vous au \glink{105}.
+
+Sinon, rendez-vous au \glink{36}.
+
+\gsection{30}
+
+\success
+
+Les histoires ne cessent pas, toujours aussi aguicheuses, toujours mélange subtil de vérité et de mensonge. Tout est promis, tout est possible. Mais le piège ne fonctionne plus, et une volonté d'acier se fraye un chemin vers ce dont on a voulu la détourner.
+
+Le cœur du marais se révèle alors. Une gigantesque masse vivante, informe, palpitante. Un amas boursouflé, pustuleux, suintant une substance noirâtre qui se mélange à l'eau. L'être est immobile, profondément enfoncé dans le sol, mais sa simple présence physique est suffisante pour mener aux abords de la syncope, à la différence de son existence psychique, plus insidieuse, plus subtile, qui n'attend qu'un instant de relâchement pour s'emparer des sentiments de sa cible et les retourner contre elle.
+
+\ellipse
+
+Vous êtes mis au courant de la réalité de cette créature avec le retour de votre spécialiste, qui n'a pas commis la folie de l'attaquer sur le champ, vous permettant ainsi de mieux préparer le futur. Débloquez la Quête suivante :
+
+\quest{Au cœur du marais}{60}{Combat (\caduceus)}{Insensée}{
+Vous avez découvert ce qui se cache au milieu des marais, pour votre plus grand malheur. Reste à vous en débarrassez, ce qui s'annonce, sans surprise, fort difficile.
+}
+
+Vous apprenez également quel danger attende votre futur candidat avant même de croiser la bête. Notez que vous et la personne venant de le parcourir disposaient dorénavant de l'Information \emph{Le Chemin du marais}.
+
+Si vous avez le Code \emph{Vengeance}, rendez-vous au \glink{89}.
+
+Sinon, rendez-vous au \glink{50}.
+
+\gsection{31}
+
+L'élément de surprise n'aura pas été déterminant. Dans ce genre de circonstances, n'importe qui s'attend à ce qu'un cadavre ne reste pas immobile très longtemps. Mais même en étant préparé, affronter au corps-à-corps un mort-vivant, un être inépuisable, ne ressentant pas la douleur, qui plus est doté d'une force phénoménale, n'est pas une chose facile.
+
+Le bras de chair du  vampire repousse aisément celui de sa victime, tandis que sa main d'os se place dans son dos, et pousse un cou tendre à portée de ses canines. Et un instant plus tard, la prise du monstre est définitivement assuré par son imparable morsure. Malgré quelques derniers efforts désespérés, le sang de la vie passe sans discontinuer d'un organisme à l'autre.
+
+Rendez-vous au \glink{33}.
+
+\gsection{32}
+
+Ce combat est un mêlée étrange. Votre mercenaire focalise l'attention de la créature, qu'il ne cesse d'aiguillonner. Équipement supérieur, expérience ou habileté naturelle lui donnent un ascendant qui empêche la bête de se détourner de lui pour s'occuper des villageois qui la harcèlent. Il n'est pas clair à quel point la transformation affecte ses capacités cognitives, mais elle se laisse manipuler comme un taureau dans l'arène. Elle s'effondre finalement rapidement sous les assauts combinés de la population en furie sans que les différents protagonistes n'aient à souffrir plus que quelques belles balafres.
+
+Ajoutez 1 point à votre Réputation.
+
+Rendez-vous au \glink{115}.
+
+\gsection{33}
+
+Toujours aucune nouvelle. Il faut se rendre à l'évidence, soit vous avez simplement été allégé de vos possessions par une personne peu désireuse d'en faire plus pour vous, soit votre confiance était bien placée, mais un malheur est arrivé.
+
+Vous avez cessé d'être sentimental à propos des accidents qui arrivent à vos protégés depuis longtemps. Trop de pertes, trop fréquemment. Aussi, est-ce ce avec la force de l'habitude que vous cherchez déjà un remplaçant.
+
+Si vous aviez envoyé un héros nommé, il devient définitivement indisponible. Il ne peut plus être recruté d'aucune façon et son éventuel équipement est perdu à jamais.
+
+Rendez-vous au \glink{50}.
+
+\gsection{34}
+
+Ce n'est pas une histoire précise qui s'échappe des abysses du temps, mais un kaléidoscope d'événements passés, une déferlante de souvenirs de tous les âges. À chaque nouvelle vision, l'apparence du marais change légèrement, pour que l'accord soit parfait, que le présent semble une conséquence logique de ce qui fut. Mais aucune de ces innombrables fables n'accroche l'esprit de l'entité qui continue d'avancer tranquillement, sans dévier d'un pouce de son chemin.
+
+L'attaque redouble de violence, les légendes se mélangent en une bouillie confuse de sons et d'images, promesses de trésors, de secrets, de pouvoirs, mais tout cela se révèle vain face à une psyché qui ne réagit pas ou plus selon les normes de l'humanité.
+
+Rendez-vous au \glink{30}.
+
+\gsection{35}
+
+Vous êtes sur le point d'aller vous coucher quand une pulsion irrationnelle, un instinct inexplicable, vous pousse à vous coiffer du cercle végétal. Vous vous alitez ensuite, la couronne de fleurs posée sur votre crâne, et passez une excellente nuit, fraîche, calme et reposante.
+
+C'est en pleine forme que vous reprenez votre travail dès le lendemain. Rendez-vous au \glink{93}.
+
+\gsection{36}
+
+À cent contre un, l'intrus est rapidement maîtrisé, capturé et déposé sur l'autel. La cérémonie commence alors, une sombre invocation aux puissances de la non-mort. Et lorsque les chants religieux atteignent leur apogée, le grand prêtre plonge le poignard rituel dans le cœur du sacrifice.
+
+\ellipse
+
+Des spectres ont tourné autour de l'auberge où vous logez toute la nuit dernière. Les pâles silhouettes blanches, intangibles mais audibles, ont hurlé des malédictions à votre encontre sans discontinuer pendant des heures, en une sarabande infernale.
+
+Si les fantômes ont disparu au lever du jour, cet incident vous a fait passer une nuit blanche et vous a quelque peu démoralisé. Et il a bien sûr engendré un certain nombre de rumeurs, pas forcément tendres à votre égard.
+
+Diminuez votre Réputation de 2.
+
+Rendez-vous au \glink{33}.
+
+\gsection{37 – Le cercle de la paix}
+
+Il existe une portion de la forêt que les gens et les animaux évitent naturellement. Elle n'est ni dangereuse, ni insalubre, ni dévastée, ni même de mauvais augure. Simplement, quand la possibilité se présente de s'y rendre ou d'aller n'importe où ailleurs, une force pousse toujours à choisir le ailleurs.
+
+Mais le charme n'est pas assez fort pour détourner de son but quelqu'un désirant explicitement y pénétrer, en toute connaissance de cause. En ce cas, il découvrirait rapidement que les bois sont bien plus peuplés qu'ils ne veulent le paraître. Des créatures s'enfuiraient devant lui, se réfugiant dans la végétation avant qu'ils ne puissent tout à fait distinguer ce dont il s'agit. La nature se révélerait plus fertile et plus nourricière qu'elle ne devrait, les arbres arborant encore de beaux fruits, dont certains en partie mangés.
+
+Et s'il s'obstinait dans sa quête, il ne tarderait pas à voir son chemin bloqué par un noble chevalier à l'armure argentée qui le sommerait de s'en aller.
+
+Si vous avez désigné la \hero{Sorcière} pour cette tâche, rendez-vous au \glink{135}.
+
+Si vous avez envoyé quelqu'un disposant de la Spécialité Diplomatie, rendez-vous au \glink{102}.
+
+Si ce n'est pas le cas, mais que le Combat est plus son domaine, rendez-vous au \glink{80}.
+
+Sinon, rendez-vous au \glink{54}.
+
+\gsection{38}
+
+L'anneau du leprechaun ne réagit pas. Ce n'est qu'un détail, mais le genre de détails qui une fois remarqué ne peut plus être ignoré. Un élément discordant qui rompt l'illusion, brise la transe, met fin à la magie. En un instant, il n'y a plus de civilisation disparue, plus d'or. Il n'y a qu'un homme seul au fond d'un trou, dont les coups de pelles rageurs ont mené au bord l'effondrement les parois du tombeau qu'il s'est lui même creusé.
+
+Dès que son esprit réalise de quelle manipulation il a été victime, il se transforme en être furieux, à qui la rage donne la force de triompher de ses muscles endolories pour s'extraire de la terre peu avant qu'elle ne l'enferme.
+
+Notez le Code \emph{Vengeance}.
+
+Rendez-vous au \glink{30}.
+
+\gsection{39}
+
+Vous vous réveillez une demi-seconde avant que la griffe du monstre ne vous arrache le visage, et vous jetez sur le côté juste à temps pour qu'il ne vous fasse qu'une large entaille au cuir chevelu et à l'oreille. Pas beau à voir, mais toujours mieux que de perdre ses deux yeux.
+
+La goule qui vous a attaqué est encore fraîche. Et pour cause, même si sa peau est si pâle qu'il ne doit ne plus rester une goutte de sang dans son corps et que ses ongles et ses dents ont retrouvé leurs racines préhistoriques, il n'y a pas à s'y tromper :  c'est la personne que vous aviez tout récemment envoyé enquêter sur le messie des nécromanciens.
+
+C'est dans ce genre de situations que vous regrettez le plus de ne plus disposer de vos pouvoirs. Une bonne boule de feu aurait réglé le problème en deux temps trois mouvements. Mais dans votre état actuel, vous n'avez cependant d'autre choix que de fuir en hurlant à pleins poumons.
+
+Vous ne savez s'il faut rire ou pleurer du chaos qui s'ensuit. Un voisin alerté par le bruit a le malheur de sortir de sa chambre au mauvais moment. Le propriétaire, dérangé dans son sommeil, vient lui aussi vous houspiller, avant de prendre ses jambes à son cou en comprenant la situation. Le problème est finalement réglé en quelques coups de hache par un de ces mercenaires à la petite semaine qui vous proposent régulièrement leurs services, qui demande bien sûr paiement pour son travail.
+
+Pas la meilleure soirée de votre vie concluez-vous alors qu'un boucher local vous recoud comme il peut. Au moins êtes-vous encore en état de continuer votre quête. Si vous aviez été amoché juste assez pour être mis hors d'état de poursuivre mais pas pour succomber, ce qui n'a rien d'impossible tant il est notoirement difficile de vous achever, la frustration d'échouer si près du but vous aurait probablement rendu fou.
+
+Diminuez votre Réputation de 1 et votre or de 5. Effacez ensuite le Code \emph{Corruption}.
+
+Enfin, retournez au \glink{50}.
+
+\gsection{40}
+
+\gsection{41}
+
+« À genoux ! »
+
+L'être répète son ordre, impérieusement cette fois-ci, puis encore, et encore, rageusement, désespérément. Comprenant que ses pouvoirs sont sans effet, il tente de s'approcher, mais il n'a fait un pas qu'il se heurte violemment à la barrière invisible.
+
+Voilà l'incarnation de la tombe. Voici celui qui est revenu d'entre les morts pour hanter les vivants. Un être pitoyable, confiné dans quelques mètres carrés.
+
+Cependant, il retrouve bien vite sa contenance, et sourit même de toutes ces dents.
+
+« Voilà bien trop longtemps que je n'avais pas croisé quelqu'un capable de me résister ne serait-ce qu'un peu. Les choses redeviendraient-elles enfin intéressantes ? Si vous venez pour me tuer, je dois cependant vous avertir que vous perdez votre temps. Croyez-moi, cela fait des millénaires que des personnes bien plus dangereuses que vous essayent, mais aucune n'a réussi. Quoi que vous fassiez, je continuerai à vivre. »
+
+Commence alors une longue conversation. Le non-mort se montre serviable, répondant aux questions sans langue de bois. Il se peut que sa simple présence permette aux autres morts-vivants de s'affranchir de certaines règles, mais qu'y peut-il ? Ce n'est pas lui qui a choisi d'être scellé en ces terres.
+
+« Pour être exact, je n'étais même pas enfermé ici à l'origine. Auparavant, j'étais dans un autre lieu, mais le puissant roi-mage qui le dirigeait en eut un jour accès des conséquences de ma présence sur son pays et usa de ses pouvoirs pour m'envoyer, moi et toute cette montagne qui m'emprisonne au diable Vauvert. Je pense qu'il avait choisi le fond d'un océan ou le cœur d'un désert comme destination, mais son sortilège ne se passa pas comme prévu et j'ai atterri ici. Mon hypothèse est que le dieu enfoui des marais a interféré pour m'attirer. Je pense que j'ai des qualités qui l'intéressent, notamment de pouvoir rompre l'ordre normal des choses. »
+
+Et de conclure :
+
+« C'est lui votre véritable ennemi, vous savez. Moi-même, je ne suis qu'une conséquence de ses caprices et ne demanderais pas mieux qu'à partir loin d'ici. Le fait que nous puissions tenir cette conversation sans que vous ne rampiez à mes pieds m'indique que vous n'êtes pas ordinaire. Peut-être que nous pourrions nous aider mutuellement. Voyez-vous, je connais peut-être moyen de vous débarrasser de votre problème. Je me trouve d'ailleurs en ce moment-même au centre de ma solution.
+
+En effet, le sortilège qui a été utilisé pour m'enfermer ici est terriblement puissant. J'irais jusqu'à dire que mes anciens ennemis m'ont probablement un peur surestimé. C'est une prison du genre qu'utilisent les nouveaux dieux pour enfermer leurs prédécesseurs. Elle fonctionne dans les deux sens. Ce qu'elle emprisonne, moi en l’occurrence, ne peut la quitter, mais personne d'autre ne peut non plus y entrer. La force d'attraction est infiniment supérieur à celle de répulsion, mais si vous vous amusiez à semer des petits cailloux, vous les verriez se déplacer lentement mais sûrement vers la sortie. Cela a l'avantage de m'éviter de faire les poussières, mais c'est aussi pour cela que je suis incapable de conserver des vêtements bien longtemps.
+
+Cependant, de très longues années où je n'avais rien de mieux à faire que de l'étudier m'ont permis d'en comprendre le fonctionnement dans les moindres détails. Et je pense pouvoir le reproduire. Je ne veux pas paraître prétentieux, mais je suis sûr qu'un sceau d'une telle ampleur pourrait neutraliser n'importe qui, même la créature des marais. »
+
+Plusieurs pièges sont évidents dans le discours charmeur du non-homme, et son interrogatoire se fait féroce.
+
+« Quel intérêt a ce sceau si l'influence de ce qu'il contient peut s'étendre à l'extérieur ? Je vous rassure, ce n'était pas censé être le cas lorsqu'ils l'ont conçu. Cependant, je suis parvenu à trafiquer quelques runes lors de sa réalisation, dans l'espoir de me ménager une porte de sortie. Je n'ai cependant réussi qu'à me percer ce petit trou d'aération. N'ayant aucune envie que ce monstre continue à corrompre mes frères et sœurs, je ne lui laisserai pas l'opportunité de me faire un coup semblable.
+
+Ce que j'y gagne ? Et bien voyez-vous, ce type de sceau a une petite particularité. Rien de grave, simplement il est tellement puissant qu'il ne peut en exister deux en simultané dans une zone d'espace aussi réduite. Sinon ils interférent l'un avec l'autre et se neutralisent mutuellement. Le seul moyen d'en créer un nouveau dans cette région sera donc de faire disparaître celui-ci au fur et à mesure que l'autre naîtra. Pour chaque cercle de protection qui sera établi autour du monstre, un des miens, devenu inopérant, devra être effacé. Ainsi, lorsque sa prison sera complète, la mienne sera détruite. Le seul prix que je demande pour mes services est donc la liberté. »
+
+\ellipse
+
+Vous détestez prendre des décisions de ce type. Ce mort-vivant spécial est clairement maléfique, dangereux, mais c'est peut-être votre seul espoir de venir à bout de la créature qui vie dans les marais. Vous pensez qu'il vous a dit, à quelques omissions près, la vérité. Son idée a des chances de fonctionner, et il est plus probablement le seul être encore en vie (plus ou moins) à disposer des connaissances suffisantes pour établir un tel sceau.
+
+De l'autre, ce n'est pas quelqu'un que vous avez envie de relâcher dans la nature comme cela. Le remède pourrait être pire que le mal. De deux maux, faut-il réellement choisir le moindre, ou y a-t-il encore une solution alternative ?
+
+Mais commençons par le commencement. Disposez-vous déjà des ressources nécessaires pour réaliser un tel sceau ?
+
+En effet, ramené aux dimensions du monstre que vous voulez enfermer, et en comptant sur le fait qu'il ne soit pas possible de l'approcher de trop près, cela nécessite de réaliser des cercles d'un diamètre gigantesque. Le fond d'un marais n'étant pas un terrain très propice, il sera nécessaire d'assécher, de construire une chaussée de briques sur laquelle il soit possible de graver et de peindre. Cela implique donc des ouvriers, à protéger contre les insinuations mentales de la créature, donc des charmes ou des protections, donc un soutien magique...
+
+Si vous voulez persévérer dans cette voie, il vous faudra un nombre non négligeable d'alliés. Pour être exact, vous devez disposer des codes \emph{Vie}, \emph{Purification}, \emph{Ombre}, \emph{Sabbat} et \emph{Féerie}.
+
+Si vous ne les avez pas, rendez-vous au \glink{50}.
+
+Si vous avez réellement réuni les cinq pointes de l'étoile, et que vous souhaitez appliquer ce plan, vous devez décider dès maintenant à quel point vous comptez respecter votre part du marché. Vous pouvez bien sûr être honnête avec le non-mort et le laisser partir comme il vous le demande, mais vous pouvez aussi prévenir l'ordre de sa existence au moment opportun pour qu'ils le cueillent à la sortie.
+
+Notez votre décision, puis rendez-vous au \glink{7}.
+
+\gsection{42}
+
+La descente vers les profondeurs se prolonge, infiniment. Le monde se limite à une minuscule sphère autour de la source de lumière magique, faible, pâle, mais constante, rassurante.
+
+Et bientôt, la nervosité s'atténue au profit de la routine. Les ténèbres devant et derrière ne cachent que des marches, pas des horreurs indicibles. Les squelettes desséchés d'autres aventuriers effondrés çà-et-là ne sont plus qu'un élément de décor répétitif.
+
+Et lorsque la peur disparaît, l'escalier se finit.
+
+Et au-delà de cet enfer se trouve le paradis. Non pas un monde parfait idyllique de fleurs, de plumes, de nuages et d'arcs-en-ciel, juste le même que celui d'en haut avec quelques petites différences. Ceux qui n'auraient pas dû mourir mais que la fatalité a rattrapé sont en vie. Ceux qui ont souffert ou souffraient encore d'un acharnement immérité du destin ont maintenant une existence meilleure. Le méchant est toujours puni et le juste toujours récompensé, qu'il soit riche ou pauvre, grand ou petit.
+
+Si la personne présente ici a déjà accompli pour vous, avec succès, la Quête \textbf{Le marais interdit}, rendez-vous au \glink{26}.
+
+Sinon, mais que vous lui avez appris la \emph{Formule du Souvenir}, rendez-vous au \glink{98}.
+
+Dans tous les autres cas, rendez-vous au \glink{33}.
+
+\gsection{43}
+
+Les mots seuls ne semblent pas suffisants pour convaincre l'assemblée, et bientôt crachats et sifflets fusent. Mais alors qu'il reprend son souffle, le réceptacle de toute cette vindicte populaire sent de le poids de l'instrument dans la poche intérieure de son vêtement, oublié là – volontairement ou non – par ses geôliers et juges. Alors pris d'une inspiration, il s'en saisit et joue.
+
+Des souvenirs longtemps oubliés remontent à la surface. Des traces d'un lointain passé, bien avant qu'il ne soit jeté sur les routes, à errer à travers le monde. Poussé par la magie du lieu, de l'instant, il transcende sa maigre technique pour produire une mélodie nouvelle, met à nu son âme et son ambition dans le déferlement de la musique. Le récital est aussi court qu'intense, et lorsque la dernière note se meurt, le silence est complet.
+
+Rendez-vous au \glink{20}.
+
+\gsection{44}
+
+\success
+
+Tout ce dédale, toute cette marche pour terminer dans un minuscule cul de sac rocheux, un réduit qui nécessite de se plier en deux pour en atteindre l'extrémité. Et au fin fond de cette ode à la claustrophobie se trouve l'ombre d'une femme. Repliée en position fœtale, elle sert contre elle de toutes ses forces une cassette ornementée. Tremblante, maigre à faire peur, en haillons et couverte de crasse, ses yeux désespérés sont posés sur l'intrus qui la contemple de haut. De ses lèvres craquelées s'échappe une voix rauque, et elle raconte une histoire. Les termes qu'elle emploie sont archaïques, issus d'une langue depuis longtemps morte, mais le sens se transmet tout de même.
+
+Le conte parle d'une divinité tombée amoureuse d'une mortelle. Mais celle-ci avait le malheur d'en aimer un autre. Pour se venger, le dieu lui donna alors un magnifique coffret en lui ordonnant de ne jamais l'ouvrir. Ce qu'elle fit dans un premier temps, jusqu'à ce que le dieu, à bout de patience, monte tout une machination pour l'y contraindre. Alors de la boîte s'échappèrent tous les maux du monde, les pires maléfices qui soient, et ils se répandirent sur ce qui deviendrait plus tard l'Ylèdre. Elle la referma aussi vite qu'elle le put, réussissant à maintenir quelques horreurs supplémentaires enfermées. Pour la punir de lui avoir désobéi, le dieu l'enferma alors ensuite ici pour toute l'éternité, avec l'objet de sa honte et de sa déchéance.
+
+Une fois l'histoire terminée, elle tend la cassette, toujours fermée. Lorsque celle-ci est attrapée, elle murmure un dernier avertissement avant de s'effacer comme le brouillard sous le vent. L'instant suivant, il ne reste qu'une seule personne perplexe dans la caverne, un coffret à la main.
+
+\ellipse
+
+C'est un corps gravement épuisé par le trajet qu'il a dû accomplir pour revenir qui vous fait face, n'ayant jamais osé s'arrêter pour dormir ne serait-ce qu'un moment sur le chemin du retour, de peur de ne jamais se réveiller. Mais c'est un esprit encore actif, circonspect, qui vous narre l'histoire. Qui était la femme ? Une nouvelle illusion ? Un spectre ? Un souvenir ? Une incarnation ? Difficile à dire. Et de même que penser de sa dernière phrase ?
+
+« Il est parti, mais il a laissé son fils – notre fils – derrière lui sur le lieu de notre première rencontre, au croisement de l'ourse et du saumon. »
+
+Après vérification, il s'avère que ces deux termes sont encore utilisés, dans leur forme ancienne, pour désigner une certaine rivière et une certaine montagne. Le croisement en question correspondrait aujourd'hui au Marais Noir, un lieu sordide même selon les standards de cette région.
+
+Débloquez la Quête suivante :
+
+\clearpage
+
+\quest{Le marais interdit}{85}{Recherche (\ankh, \caduceus)}{Difficile}{
+Si vous avez correctement déchiffré les paroles de la femme fantôme, ce marais doit contenir le fils en question. Nul doute qu'une investigation du lieu pourrait vous en apprendre beaucoup, mais vous ne prenez pas les avertissements divins à la légère, aussi feriez-vous mieux de mettre toutes les cartes de votre côté avant de vous y risquer.
+}
+
+Reste la boîte. Elle vous a été remise fermée, et la prudence la plus élémentaire voudrait qu'elle le reste. Mais cette décision n'appartient qu'à vous.
+
+Ajoutez le Coffret des Malheurs [-] à vos Possessions. 
+
+Rendez-vous au \glink{50}.
+
+\gsection{45}
+
+C'est une forme d'hypnose puissante qui est utilisée, propre à faire plier la plupart des êtres humains. Toutefois, elle n'est pas employée contre un humain normal, mais contre une personne qui a déjà affronté bien pire. Ses défenses mentales surentraînées se dressent d'elles-mêmes, et la voix n'a pas d'autre effet que de transmettre du son.
+
+Rendez-vous au \glink{41}.
+
+\gsection{46}
+
+\success
+
+La confiance du saint soldat vacille alors que son corps faiblit peu à peu sous les coups des innombrables infidèles. Même avec sa foi, même avec l'expérience des batailles passées, il ne peut tenir le rythme et il le sait. Son âge se fait sentir alors qu'il tente inlassablement de repousser l'ennemi, cette bande de petites frappes que sa faiblesse galvanise.
+
+Le grand responsable de cette mascarade est si sûr de la victoire de ses troupes qu'il prépare déjà les ustensiles pour le sacrifice. Il nettoie le kriss rituel, et dépose sur l'autel, sur un coussin de velours, une sphère d'un noir profond, une perle d'obscurité irradiant de pouvoir.
+
+Quand le croisé l'aperçoit, quand il voit ce faux prêtre souiller de ses doigts cette sainte relique, une fureur sans pareille s'empare de lui. Il rugit un cri de guerre ancestral, et charge le mécréant. Les sectateurs tentent de l'arrêter, mais ne peuvent rien contre sa rage sans pareille et le ralentissent à peine. Un instant plus tard sa lame vengeresse transperce le gourou.
+
+L'objet sacré dans une main, son épée dans l'autre, il se retourne face à la meute. Une litanie s'échappe de ses lèvres, une longue prière continue, alors qu'il protège la relique de son corps, la serrant contre son cœur sans cesser de se battre.
+
+Quelque chose se produit alors, un événement qui sera plus tard ajouté à liste officielle des miracles de son église. La sphère se met à rayonner, et des esprits se matérialisent. Pas des spectres vengeurs, mais les fantômes des martyrs de la foi, des saints qui sont morts pour leurs convictions. Chevaliers du passé, prêtres antiques, simples croyants transcendés apparaissent, auréolés de lumière, formant une muraille autour du porteur de la larme.
+
+Une vague de terreur s'empare alors des adeptes de la non-vie lorsqu'ils comprennent que cette fois, les morts revenus sont dans le camp d'en face. C'est alors la débandade générale. Ils s'enfuient sans demander leur reste, sans regarder derrière eux. Un bon nombre se jetteront droit dans les filets de l'ordre.
+
+Et rapidement, alors que les saints commencent déjà à s'effacer, il ne reste plus dans la pièce que le croisé, blessé, épuisé, mais bien vivant.
+
+\ellipse
+
+Le soldat de dieu n'est pas au meilleur de sa forme quand il revient vous voir, et vous devez même faire mander un médecin en urgence, mais il est dans un état de béatitude tel qu'il ne ressent plus la douleur. Sa main est crispé autour d'un objet sphérique qu'il se refuse à lâcher, et vous abandonnez vite de lui l'idée d'obtenir un récit cohérent avant que quelques heures de sommeil ne lui ait rendu sa raison.
+
+Le lendemain matin, son esprit est plus clair, mais son histoire reste déformée par une ferveur mystique toute fraîche qui rend certains passages difficilement compréhensibles. Vous assumez cependant que la mission a été un succès, la secte ayant été dispersée.
+
+Il est aussi fou de joie et acceptera d'effectuer pour vous une ultime mission, en remerciement, avant de rentrer déposer la relique en son sanctuaire. Vous pourrez lui confier une dernière Quête en ignorant ses conditions habituelles d'embauche, après quoi il deviendra pour de bon définitivement indisponible.
+
+Notez le Code \emph{Mystique} et augmentez votre Réputation de 2.
+
+Si vous avez le Code \emph{Loi}, rendez-vous au \glink{4}. Sinon, rendez-vous au \glink{50}.
+
+\gsection{47}
+
+\gsection{48}
+
+L'histoire parle d'un dieu oublié, d'un dieu dont le culte fut interdit, les fidèles pourchassés, et le nom même banni des archives. Elle parle d'un temple reculé, caché au cœur de l'endroit le plus inhospitalier qui soit, loin de ceux qui pourraient vouloir le détruire. Elle parle du secret de ce dieu, de la raison pour laquelle il fut si impitoyablement banni, du don qu'il offre à ceux qui le vénèrent.
+
+Les pas de l'aventurier l'ont naturellement conduit devant l'autel, au cœur d'une antique chapelle en ruines. Malgré son âge et son isolement, elle montre les traces de passage non pas fréquents, mais non pas rares non plus. Le couteau et le calice sont en place sur la table de pierre, rutilants, prêts à servir. Il lui suffirait d'accomplir les gestes vus dans le souvenir, de prononcer les paroles entendus, et la magie s'opérerait : la mort relâcherait son emprise sur la personne aimée, et une seconde vie lui serait accordée.
+
+Cet affranchissement des règles de la nature a un coût, en sang, à payer dès maintenant et à jamais, mais cela repousse à peine la tentation. Une véritable résurrection, la possibilité de communiquer à nouveau à travers le voile de l'au-delà, cela ne mérite-il pas de payer n'importe quel prix ?
+
+L'homme reste indécis, immobile dans la brume froide des marais, pendant une éternité. Ce n'est qu'à la timide apparition de l'aube qu'il sort de sa transe. Ses doigts se referment sur la coupe d'or... Et il la fracasse sur le rebord avec une rage si noire qu'elle ferait reculer le diable en personne. Et l'instant d'après, il éclate en sanglots.
+
+Notez les Codes \emph{Vengeance} et \emph{Rituel}.
+
+Rendez-vous au \glink{30}.
+
+\gsection{49}
+
+Vous vous jurez de rédiger chaque jour un rapport détaillé de ce vous avez appris, et de le poser sur votre table de chevet chaque soir, pour être sûr de ne pas oublier de le relire chaque matin.
+
+Notez le Code \emph{Réminiscence}.
+
+Rendez-vous au \glink{93}.
+
+\gsection{50}
+
+Avant toute chose, si vous avez le Coffret des Malheurs, vous pouvez décider de l'ouvrir. Rendez-vous dans ce cas au \glink{66}.
+
+Si votre inventaire contient à la fois le Tome Scellé et la Lame Maudite mais pas le Code \emph{Sceau}, rendez-vous au \glink{113}.
+
+Si vous disposez du Code \emph{Corruption}, rendez-vous au \glink{39}.
+
+Si le Code \emph{Sibylle} et le Tome Scellé sont tous deux en votre possession, rendez-vous au \glink{144}.
+
+Si vous avez à la fois les Codes \emph{Religion}, \emph{Rituel} et \emph{Éternel}, mais pas \emph{Eurêka}, rendez-vous au \glink{8}.
+
+Si vous ne possédez pas le Code \emph{Mémoire}, mais que vous disposez à la fois du Code \emph{Réminiscence} et du Tome Scellé, rendez-vous au \glink{58}.
+
+Si vous avez débloqué la Quête \textbf{Le marais interdit}, qu'elle est encore d'actualité et que vous n'avez pas le Code \emph{Mémoire}, rendez-vous au \glink{79}.
+
+Si vous avez débloqué la Quête \textbf{Au cœur du marais}, et que vous voulez faire quelques recherches à son sujet, rendez-vous au \glink{22}.
+
+Sinon, rendez-vous au \glink{93}.
+
 
 \end{document}
 
