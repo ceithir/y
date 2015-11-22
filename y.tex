@@ -2,6 +2,9 @@
 
 \input{common.tex}
 
+\usepackage{fullpage}
+
+\setlength\parindent{0pt}
 \setlength{\parskip}{1.3ex plus 0.5ex minus 0.3ex}
 
 \usepackage{mdframed}
@@ -19,7 +22,7 @@
 \newcommand{\glink}[1]{\hyperref[section-#1]{#1}}
 
 \newcommand{\quest}[5]{
-    \begin{mdframed}[innertopmargin=0.5cm,innerbottommargin=0.5cm]
+    \begin{mdframed}[innertopmargin=0.5cm,innerbottommargin=0.5cm,leftmargin=0.5cm,rightmargin=0.5cm]
         \begin{center}
             \textbf{#1} (#2)
         \end{center}
@@ -33,7 +36,7 @@
 
 \newcommand{\ellipse}{
     \begin{center}
-        *****
+        *********
     \end{center}
 }
 
@@ -187,6 +190,8 @@ Leur fanatisme, leur ascétisme, leur schéma de pensée unique, les rendent aus
 Cependant, convaincre des personnes qui ont amené la paranoïa au rang d'art de vivre de vous ouvrir leur porte sera difficile. Il faudra soit quelqu'un d'assez doué pour les amadouer soit quelqu'un d'assez peu scrupuleux pour contourner cette difficulté.
 }
 
+\clearpage
+
 \quest{Le château du comte}{23}{Recherche (\ankh)}{Facile}{
 Le meilleur endroit pour trouver des documents est encore la demeure de ceux qui contrôlaient jadis la région. Bien que toute la famille ait été éliminé par un chasseur de vampires et qu'une partie de la bâtisse ait brûlée, il devrait être encore possible de trouver des éléments intéressants en fouillant les décombres.
 
@@ -201,11 +206,11 @@ La Baba Yaga, c'est autre chose. C'est la sorcière parmi les sorcières. Son ex
 La convaincre de parler à votre émissaire plutôt que de le transformer en crapaud ne sera cependant pas une mince affaire, mais il s'agit d'un être avec lequel il est possible de négocier. Reste à trouver l'aventurier qui saura la charmer ou lui faire une offre qu'elle ne pourra refuser.
 }
 
-\clearpage
-
 \quest{La traque}{3}{Combat (\caduceus)}{Moyenne}{
 Comme trop souvent, un monstre terrorise la population. Laissant des traces qui évoquent un gigantesque loup, nul ne l'avait jamais vu et est revenu pour le décrire, mais il laisse derrière lui un sillage de victimes. Même si l'éliminer ne contribuera pas directement au grand œuvre que vous vous êtes fixé, personne, et surtout pas les habitants, ne vous en voudra si vous réglez ce problème.
 }
+
+\clearpage
 
 \quest{Ceux qui vivent}{108}{Diplomatie (\cross)}{Facile}{
 Votre mission n'implique pas que de fréquenter des monstres et des tueurs de monstres. Parfois, vous devez interagir avec des personnes beaucoup plus ordinaires, que ce soit pour leur demander des informations, désamorcer des tensions critiques, ou même leur soutirer quelques deniers nécessaires à la continuation de votre tâche. Comme vous n'êtes guère présentable et avenant vous-même, vous déléguez cependant ce travail nécessitant du doigté et du charme à des aventuriers plus habiles en la matière.
@@ -213,7 +218,9 @@ Votre mission n'implique pas que de fréquenter des monstres et des tueurs de mo
 Spécial : Cette Quête est sans fin. Elle ne comporte pas de mention \emph{Succès !}, et peut être effectuée autant de fois que désiré, tant que vous avez assez de main d’œuvre à disposition. Un héros donné ne peut cependant l'accomplir qu'une seule et unique fois.
 }
 
-Vos objectifs à court terme maintenant définis au mieux des informations à votre disposition, ne vous reste plus qu'à désigner le premier champion qui sera chargé de s'y attaquer, parmi le \hero{Mnémonique}, l’Homme à la \hero{Main d’Acier}, le \hero{Beau Parleur}, le \hero{Brigand}, la \hero{Sorcière}, le \hero{Métamorphe} ou même les autres aventuriers moins hauts en couleur mais bon marché qui circulent ici.
+Vos objectifs à court terme maintenant définis au mieux des informations à votre disposition, ne vous reste plus qu'à désigner le premier champion qui sera chargé de s'y attaquer
+
+S'agira-t-il du \hero{Mnémonique}, de l’Homme à la \hero{Main d’Acier}, du \hero{Beau Parleur}, du \hero{Brigand}, de la \hero{Sorcière}, du \hero{Métamorphe} ou même d'un des autres aventuriers moins hauts en couleur mais bon marché qui circulent ici ? À vous d'en décider.
 
 \gsection{2}
 
@@ -303,15 +310,13 @@ La secte du renouveau est un groupuscule religieux hérétique, officiellement �
 Les rapports démontrent une activité plus que louche aux abords du Marais Noir, une zone humide en friche où ne sont censés vivre que les moustiques. D'après les registres, ils enregistrent un nombre élevé de disparitions d'êtres humains, et une valeur toute aussi élevée d'apparitions de monstres. Assez étrangement, l'Ordre a très peu enquêté sur le sujet. Quelques soldats ont bien été envoyés, mais votre employé n'a trouvé aucune trace de leurs témoignages. Mener votre propre enquête ne serait pas de trop.
 }
 
-\clearpage
-
 \quest{Le cercle de la paix}{37}{Recherche (\caduceus)}{Moyenne}{
 L'exact inverse du problème précédent : une zone de la carte où aucun événement sortant de l'ordinaire ne se produit. Pas d'attaque de créatures, pas de disparition, pas de magie noire, rien. Pourtant, l'endroit n'a en apparence rien de particulier, simple colline boisée comme les autres, un classique dans cette région. Un tel calme est suspect et mériterait une investigation plus poussée.
 }
 
 Le cambrioleur a encore d'autres informations à vous transmettre. Il n' a accédé pour l'instant qu'aux rapports ordinaires de l'Ordre, mais a découvert l'existence d'une réserve, fortement gardée, où sont entreposés les manuscrits trop précieux pour être détruits et trop maléfiques pour être laissés en liberté. Une mine d'informations extraordinaire, à laquelle il pense pouvoir accéder, contre un tarif qu'il juge très raisonnable par rapport au danger de la mission : 10 pièces d'or !
 
-Si vous avez de quoi le payer et désirer le faire, rendez-vous au \glink{109}.
+Si vous avez de quoi le payer et désirez le faire, rendez-vous au \glink{109}.
 
 Sinon, il prend congé. Rendez-vous au \glink{50}.
 
@@ -362,7 +367,6 @@ Tant d'acharnement vous étonne, aussi parcourez-vous de nouveau toutes les info
 \textit{Il est le premier et le plus parfait des ressuscités. Il a tout les atouts de la première vie, mais aucune de ses tares. Il marche parmi nous, et sous ses pas le chaos de la nature est remplacé par l'ordre divin.} [...] \textit{Les mécréants, craignant la vérité qu'il apportait, le jugèrent, le condamnèrent et sous la terre ils l'enfermèrent. Mais ne peut mourir ce qui est déjà mort, et dans sa prison de roches et de pierres, l'Élu attend son heure.}
 
 Vous débloquez la Quête :
-\clearpage
 
 \quest{L'avatar}{95}{Combat (\ankh)}{Insensée}{
 Les adeptes ne vivent peut-être pas sous terre simplement pour échapper aux persécutions. Peut-être cherchent-ils quelqu'un, quelqu'un dont la simple présence est suffisante pour modifier l'équilibre de la nature. Avec cette hypothèse en tête, un second examen de leurs caches risque d'apporter de troublantes révélations.
@@ -601,7 +605,7 @@ La \hero{Princesse} est dès maintenant disponible.
 
 Si vous en êtes aussi à votre septième recrutement, rendez-vous au \glink{52}.
 
-Sinon, il est pour un nouveau cycle Recrutement/Quête de commencer.
+Sinon, il est temps pour un nouveau cycle Recrutement/Quête de commencer.
 
 \gsection{26}
 
@@ -636,7 +640,6 @@ Ajoutez un exemplaire du Tome Scellé [-] à vos Possessions.
 La sorcière du fond des âges a aussi parlé de trouver ses doubles inversés, ses contemporains des contes, ceux qui vivent par la lumière mais se cachent dans l'ombre.
 
 Débloquez la Quête suivante :
-\clearpage
 
 \quest{Le cercle de la paix}{37}{Recherche (\caduceus)}{Moyenne}{
 La Baba Yaga a désigné cette zone de la forêt comme abritant des êtres qui pourraient vous aider. Elle semble tout à la fois les mépriser et les respecter, mais fait beaucoup de mystères sur leur compte. À vous d'aller voir ce qu'il en est.
@@ -895,8 +898,6 @@ C'est un corps gravement épuisé par le trajet qu'il a dû accomplir pour reven
 Après vérification, il s'avère que ces deux termes sont encore utilisés, dans leur forme ancienne, pour désigner une certaine rivière et une certaine montagne. Le croisement en question correspondrait aujourd'hui au Marais Noir, un lieu sordide même selon les standards de cette région.
 
 Débloquez la Quête suivante :
-
-\clearpage
 
 \quest{Le marais interdit}{85}{Recherche (\ankh, \caduceus)}{Difficile}{
 Si vous avez correctement déchiffré les paroles de la femme fantôme, ce marais doit contenir le fils en question. Nul doute qu'une investigation du lieu pourrait vous en apprendre beaucoup, mais vous ne prenez pas les avertissements divins à la légère, aussi feriez-vous mieux de mettre toutes les cartes de votre côté avant de vous y risquer.
@@ -1371,6 +1372,8 @@ Et lorsque l'Âge d'Or arriva à sa fin, que le pouvoir commença à se raréfie
 Montez au sommet de la plus haute montagne, vous y trouverez un trou. Entrez dans ce trou, vous y verrez un escalier. Descendez cet escalier, jusqu'au bout, marche après marche, jusqu'à ce que vos jambes soient dures comme la pierre, votre souffle rauque, votre torche consumée. Et alors vous trouverez toutes les réponses que vous cherchez, même celles que vous auriez préféré ignorer. »
 
 Telle est l'histoire qui vous a été rapportée, le discours de la Baba Yaga. Il soulève plus d'interrogations qu'il n'amène de solutions, mais au moins disposez-vous d'une nouvelle piste :
+
+\clearpage
 
 \quest{Les cavernes du début du monde}{51}{Recherche}{Difficile}{
 Malgré des indications plus que floues, vous avez réussi à identifier la fameuse grotte qui pourrait contenir les réponses à vos questions. Ne reste plus qu'à l'explorer. Une mission simple en apparence, et pourtant vous avez des sueurs froides rien que d'y penser. Bien que vous n'ayez aucune base solide pour le supposer, vous êtes persuadé que ce qui cache au fond de ces cavernes est dangereux. Extrêmement dangereux même.
@@ -2154,6 +2157,8 @@ Le rapport complet de tout ce qui a été entendu est au final un peu décevant,
 Un détail vous a cependant paru digne d'intérêt et mériterait une enquête.
 
 Débloquez la Quête :
+
+\clearpage
 
 \quest{Le marais interdit}{85}{Recherche (\ankh, \caduceus)}{Difficile}{
 Le Marais Noir est un terrain particulièrement inhospitalier, même selon les critères de l'Ylèdre, un bourbier infâme seulement apprécié des moustiques, mais il n'est pas censément plus étrange, plus mystérieux, plus suspicieux qu'un autre endroit du pays. Toutefois, qu'une dizaine de membres de la secte du renouveau, et autant de soldats de l'Ordre à leur recherche, y aient disparu sans laisser de trace vient relativiser cela. Il s'agissait après tout uniquement de personnes entraînées à lutter contre les dangers naturels de ce pays, d'un côté de la barrière ou de l'autre. Qu'aucun n'ait plus donné signe de vie est donc fort inquiétant.
